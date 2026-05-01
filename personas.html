@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Palace — Ai sẽ dùng và vì sao? | JTBD & User Stories</title>
+<meta name="description" content="8 personas thực tế và workflow cụ thể của họ với Memory Palace — local-first AI second brain. Phân tích Jobs-To-Be-Done sâu, làm cơ sở cho marketing và product strategy.">
+<style>
+  :root {
+    --bg: #fafaf9;
+    --bg-elevated: #ffffff;
+    --bg-soft: #f5f5f4;
+    --text: #1c1c1c;
+    --text-secondary: #525252;
+    --text-muted: #767676;
+    --border: #e7e5e4;
+    --border-strong: #d6d3d1;
+    --accent: #0066ff;
+    --accent-soft: rgba(0, 102, 255, 0.08);
+    --accent-strong: #0052cc;
+    --green: #16a34a;
+    --green-soft: rgba(22, 163, 74, 0.08);
+    --red: #dc2626;
+    --red-soft: rgba(220, 38, 38, 0.08);
+    --amber: #d97706;
+    --amber-soft: rgba(217, 119, 6, 0.08);
+    --purple: #7c3aed;
+    --purple-soft: rgba(124, 58, 237, 0.08);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0c0c0c;
+      --bg-elevated: #161616;
+      --bg-soft: #1f1f1f;
+      --text: #f5f5f4;
+      --text-secondary: #d4d4d4;
+      --text-muted: #a3a3a3;
+      --border: #292524;
+      --border-strong: #3f3f3f;
+      --accent: #4a8aff;
+      --accent-soft: rgba(74, 138, 255, 0.12);
+      --accent-strong: #6ba3ff;
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+      --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+    -webkit-font-smoothing: antialiased;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* === HERO === */
+  .hero {
+    padding: 96px 24px 64px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--accent-soft) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 20px;
+    color: var(--text);
+  }
+  .hero h1 .accent { color: var(--accent); }
+  .hero p.lead {
+    font-size: 19px;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 32px;
+    line-height: 1.6;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .hero-meta span::before { content: '•'; margin-right: 8px; color: var(--border-strong); }
+  .hero-meta span:first-child::before { content: ''; margin: 0; }
+
+  /* === SECTION === */
+  section { padding: 64px 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+    color: var(--text);
+  }
+  h2 .num {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.7em;
+    margin-right: 12px;
+    font-feature-settings: 'tnum';
+  }
+  h2 + .subtitle {
+    color: var(--text-secondary);
+    font-size: 17px;
+    margin: 0 0 40px;
+    max-width: 640px;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin: 32px 0 12px;
+    color: var(--text);
+  }
+
+  p { margin: 0 0 16px; color: var(--text-secondary); }
+  p strong { color: var(--text); font-weight: 600; }
+
+  /* === REFRAME (NOT/IS) === */
+  .reframe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+  @media (max-width: 640px) { .reframe { grid-template-columns: 1fr; } }
+  .reframe-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-sm);
+  }
+  .reframe-card.is-not { border-left: 3px solid var(--red); }
+  .reframe-card.is-yes { border-left: 3px solid var(--green); background: var(--green-soft); }
+  .reframe-card .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .reframe-card.is-not .label { color: var(--red); }
+  .reframe-card.is-yes .label { color: var(--green); }
+  .reframe-card ul { margin: 0; padding-left: 20px; }
+  .reframe-card li { color: var(--text-secondary); margin-bottom: 6px; }
+  .reframe-quote {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  /* === CORE JOBS === */
+  .jobs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .job-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .job-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .job-card .job-num {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+  }
+  .job-card h3 { margin-top: 0; }
+  .job-statement {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text);
+    margin: 16px 0;
+    line-height: 1.55;
+  }
+  .job-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .job-meta-row { display: flex; gap: 12px; align-items: flex-start; }
+  .job-meta-row .key {
+    flex: 0 0 130px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .job-meta-row .val { color: var(--text-secondary); }
+
+  /* === PERSONA === */
+  .persona {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .persona-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .persona-avatar {
+    flex: 0 0 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .persona-id {
+    flex: 0 0 auto;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+  }
+  .persona-title {
+    flex: 1;
+  }
+  .persona-title h3 {
+    margin: 0 0 4px;
+    font-size: 22px;
+  }
+  .persona-bio {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin: 0;
+  }
+  .persona-quote {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.55;
+    padding: 20px 24px;
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin: 0 0 24px;
+  }
+  .persona-section { margin-top: 20px; }
+  .persona-section .label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+  .workflow-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+  .workflow-list li {
+    counter-increment: step;
+    position: relative;
+    padding: 8px 0 8px 36px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .workflow-list li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-feature-settings: 'tnum';
+  }
+  .why-pay {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: var(--green-soft);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--green);
+    font-size: 15px;
+    color: var(--text);
+  }
+  .why-pay strong { color: var(--green); }
+
+  /* === MATRIX TABLE === */
+  .table-wrap { overflow-x: auto; margin: 24px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    font-size: 14px;
+  }
+  th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  thead th {
+    background: var(--bg-soft);
+    font-weight: 600;
+    color: var(--text);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--bg-soft); }
+  td { color: var(--text-secondary); }
+  td strong { color: var(--text); }
+
+  /* === ANTI-PERSONAS === */
+  .anti-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .anti-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+  }
+  .anti-card h4 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .anti-card p { margin: 0; font-size: 14px; }
+
+  /* === MARKETING === */
+  .tagline-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .tagline-card.recommended {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+  }
+  .tagline-card .pick {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .tagline-card .text {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .tagline-card .reason { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+  /* === DEMO TIMELINE === */
+  .timeline {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    font-family: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 14px;
+  }
+  .timeline-row {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .timeline-row:last-child { border-bottom: none; }
+  .timeline-time {
+    flex: 0 0 80px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .timeline-action { color: var(--text-secondary); }
+
+  /* === CTA / CALLOUT === */
+  .callout {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .callout.priority-high { border-left: 4px solid var(--red); background: var(--red-soft); }
+  .callout.priority-med { border-left: 4px solid var(--amber); background: var(--amber-soft); }
+  .callout.priority-low { border-left: 4px solid var(--green); background: var(--green-soft); }
+  .callout.note { border-left: 4px solid var(--accent); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* === FOOTER === */
+  footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 14px;
+    background: var(--bg-soft);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* === BADGES === */
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .badge.tier-trial { background: var(--bg-soft); color: var(--text-muted); }
+  .badge.tier-life { background: var(--accent-soft); color: var(--accent); }
+  .badge.tier-studio { background: var(--purple-soft); color: var(--purple); }
+  .badge.tier-student { background: var(--amber-soft); color: var(--amber); }
+
+  /* === TOC === */
+  .toc {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 32px 0;
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 15px;
+  }
+  .toc ol li { padding: 4px 0; }
+  .toc ol a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .toc ol a:hover { color: var(--accent); }
+
+  hr.ornament {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    max-width: 80px;
+    margin: 32px auto;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="eyebrow">Product Strategy · JTBD Analysis</span>
+  <h1>Ai sẽ trả $49 cho<br><span class="accent">Memory Palace</span> — và vì sao?</h1>
+  <p class="lead">8 personas thực tế với workflow cụ thể, không phải feature list. Trả lời câu hỏi gốc của marketing: <em>"User của tôi là ai và họ thuê app này làm việc gì trong cuộc sống?"</em></p>
+  <div class="hero-meta">
+    <span>Ngày: 2026-05-01</span>
+    <span>Framework: Jobs-To-Be-Done</span>
+    <span>Mục đích: Marketing input</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-title">Mục lục</div>
+    <ol>
+      <li><a href="#section-1">Bản chất sản phẩm — phát biểu lại</a></li>
+      <li><a href="#section-2">Three Core Jobs</a></li>
+      <li><a href="#section-3">8 Personas + User Stories</a></li>
+      <li><a href="#section-4">Anti-personas — KHÔNG nên target</a></li>
+      <li><a href="#section-5">Use Case Matrix theo Vertical</a></li>
+      <li><a href="#section-6">Insights cho Marketing & Positioning</a></li>
+      <li><a href="#section-7">Câu hỏi chiến lược còn mở</a></li>
+      <li><a href="#section-8">Action items kết luận</a></li>
+    </ol>
+  </nav>
+
+  <!-- SECTION 1 -->
+  <section id="section-1">
+    <h2><span class="num">01</span>Bản chất sản phẩm — phát biểu lại</h2>
+
+    <div class="reframe">
+      <div class="reframe-card is-not">
+        <div class="label">Memory Palace KHÔNG phải</div>
+        <ul>
+          <li>Một note app (Obsidian, Notion đã làm)</li>
+          <li>Một AI chatbot (ChatGPT, Claude đã làm)</li>
+          <li>Một file converter (Pandoc, Markitdown đã làm)</li>
+          <li>Một RAG system (LangChain, LlamaIndex đã làm)</li>
+        </ul>
+      </div>
+      <div class="reframe-card is-yes">
+        <div class="label">Memory Palace LÀ</div>
+        <p class="reframe-quote">Một <strong>dây chuyền sản xuất tri thức cá nhân tự động</strong>: drop tài liệu thô → AI biên dịch thành wiki có cấu trúc, link nội bộ, có Q&amp;A — chạy 100% trên máy bạn, output là Markdown chuẩn Obsidian.</p>
+      </div>
+    </div>
+
+    <p>Cốt lõi không phải <em>"lưu trữ"</em> mà là <strong>transform</strong>: từ chaos (file PDF/video/article rải rác) → order (wiki có concept atomic, có MOC, có timeline, có cross-link).</p>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="section-2">
+    <h2><span class="num">02</span>Three Core Jobs</h2>
+    <p class="subtitle">Ba "việc" mà user thuê Memory Palace làm. Tất cả copy marketing nên xoay quanh 3 jobs này, không quanh feature list.</p>
+
+    <div class="jobs-grid">
+
+      <div class="job-card">
+        <span class="job-num">JOB 1</span>
+        <h3>Help me remember what I've read</h3>
+        <p class="job-statement"><strong>Khi</strong> tôi đọc xong 1 paper/article/video, <strong>tôi muốn</strong> lưu lại insight cốt lõi với liên kết đến những gì tôi đã đọc trước đó, <strong>để có thể</strong> tìm lại + xây dựng kiến thức tích lũy thay vì đọc rồi quên.</p>
+        <div class="job-meta">
+          <div class="job-meta-row"><span class="key">Context kích hoạt:</span><span class="val">Vừa đọc xong, brain còn nóng, sợ quên trong 24h.</span></div>
+          <div class="job-meta-row"><span class="key">User hiện làm gì:</span><span class="val">Highlight Kindle → quên, copy-paste vào Notion → mục lục rối, viết note tay → lạc.</span></div>
+          <div class="job-meta-row"><span class="key">MP giải quyết:</span><span class="val">Drop PDF → AI tự đọc, tạo concept atomic file + summary + link đến các concept hiện có trong wiki.</span></div>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <span class="job-num">JOB 2</span>
+        <h3>Help me synthesize across sources</h3>
+        <p class="job-statement"><strong>Khi</strong> tôi cần hiểu sâu một topic mà tôi đã đọc 10+ nguồn rời rạc, <strong>tôi muốn</strong> thấy các luận điểm trùng/mâu thuẫn được nối kết tự động, <strong>để có thể</strong> form opinion có evidence thay vì cảm tính.</p>
+        <div class="job-meta">
+          <div class="job-meta-row"><span class="key">Context kích hoạt:</span><span class="val">Sắp viết bài / present / quyết định lớn.</span></div>
+          <div class="job-meta-row"><span class="key">User hiện làm gì:</span><span class="val">Mở 10 tab, ctrl-F, scroll up xuống, mất 2-3 giờ.</span></div>
+          <div class="job-meta-row"><span class="key">MP giải quyết:</span><span class="val"><code>query: &lt;câu hỏi&gt;</code> hoặc <code>debate: &lt;câu hỏi&gt;</code> → AI navigate qua wiki, trả lời có citation [[concept]] click được.</span></div>
+        </div>
+      </div>
+
+      <div class="job-card">
+        <span class="job-num">JOB 3</span>
+        <h3>Help me produce output from what I know</h3>
+        <p class="job-statement"><strong>Khi</strong> tôi cần tạo report / slide / bài viết, <strong>tôi muốn</strong> AI dùng kho tri thức của <em>TÔI</em> (không phải training data chung), <strong>để có thể</strong> sản phẩm phản ánh đúng góc nhìn + nguồn của tôi.</p>
+        <div class="job-meta">
+          <div class="job-meta-row"><span class="key">Context kích hoạt:</span><span class="val">Deadline, cần ship.</span></div>
+          <div class="job-meta-row"><span class="key">User hiện làm gì:</span><span class="val">Mở ChatGPT, copy-paste context manually, fight hallucination.</span></div>
+          <div class="job-meta-row"><span class="key">MP giải quyết:</span><span class="val"><code>report:</code> / <code>slides:</code> / <code>ppt:</code> — AI generate từ wiki của user, file-back loop ghi lại insight mới vào wiki.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="section-3">
+    <h2><span class="num">03</span>8 Personas + User Stories</h2>
+    <p class="subtitle">Mỗi persona có một workflow ngày bình thường + lý do trả tiền cụ thể. Đây là input gốc cho landing page và demo video.</p>
+
+    <!-- P1 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">S</div>
+        <div class="persona-title">
+          <span class="persona-id">P1 · Researcher</span>
+          <h3>Sarah, 27 — PhD năm 3 ngành Cognitive Science</h3>
+          <p class="persona-bio">Đọc 8-12 paper/tuần, viết literature review, thesis sắp tới.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Khi tôi đọc 1 paper mới, tôi muốn nó tự động được link với 50+ paper tôi đã đọc trước, để khi viết literature review tôi không phải mở Zotero ngồi đọc lại từng cái."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow ngày bình thường</div>
+        <ol class="workflow-list">
+          <li><strong>Sáng:</strong> Drop 3 PDF từ arXiv vào <code>raw/papers/</code></li>
+          <li><strong>Trưa:</strong> Memory Palace compile khi đang ăn (~5 phút mỗi paper)</li>
+          <li><strong>Chiều:</strong> Mở Obsidian → graph view → thấy paper mới đã link với <code>[[Predictive Coding]]</code>, <code>[[Free Energy Principle]]</code></li>
+          <li><strong>Cuối tuần:</strong> <code>report: predictive coding hierarchy in vision</code> → có draft 5 trang để review với supervisor</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49:</strong> Tiết kiệm 10-15h/tuần. <span class="badge tier-life">Lifetime $49</span> rẻ hơn 2 tháng dùng Cursor Pro.
+      </div>
+    </article>
+
+    <!-- P2 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">M</div>
+        <div class="persona-title">
+          <span class="persona-id">P2 · Strategy Consultant</span>
+          <h3>Minh, 31 — McKinsey alumni, freelance consultant</h3>
+          <p class="persona-bio">Mỗi project đọc 30-50 industry report, charge $30K cho 1 đề bài.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Khi client trả tôi $30K cho 1 đề bài, tôi không có thời gian re-read PwC report cũ tôi đã đọc 3 năm trước. Tôi cần một bộ nhớ ngoài có thể chat được."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Bắt đầu project: Drop toàn bộ industry report client gửi (PDF, PPTX, Excel) vào <code>raw/&lt;project-name&gt;/</code></li>
+          <li>Tạo vault riêng cho client (Memory Palace hỗ trợ multi-vault)</li>
+          <li>Compile qua đêm</li>
+          <li>Cả tuần: chat với wiki — <em>"5 điểm khác biệt giữa go-to-market của competitor A và B?"</em></li>
+          <li>Output: <code>slides:</code> → đem present client</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49 + Studio $199:</strong> Privacy quan trọng (client data NDA — local-first là USP). Không thể upload lên ChatGPT. <span class="badge tier-studio">Studio $199</span> cho phép cài 5 máy = 5 project song song.
+      </div>
+    </article>
+
+    <!-- P3 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">A</div>
+        <div class="persona-title">
+          <span class="persona-id">P3 · Content Creator</span>
+          <h3>An, 29 — Newsletter VN về tech, 4000 subscribers</h3>
+          <p class="persona-bio">Mỗi tuần 1 issue, đọc 50+ article/tuần để chắt lọc.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Tôi đọc 50+ article/tuần để chắt lọc 1 newsletter. Tôi cần 'workshop' nơi mọi nguồn được organize sẵn, để khi viết tôi chỉ cần lắp ghép."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Suốt tuần: Save Obsidian Web Clipper bài hay vào <code>raw/articles/</code></li>
+          <li>Watcher tự compile background</li>
+          <li>Thứ 6: <code>query: top 3 takeaways từ tuần này về AI agents</code> → có outline</li>
+          <li>Viết newsletter dùng wiki làm authoritative source</li>
+          <li>Sau publish: <code>file-back: outputs/newsletter-2026-W18.md</code> → wiki học insight mới</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49:</strong> Output quality + sourcing đầy đủ → trust với subscriber. <span class="badge tier-life">Lifetime $49</span> replace Readwise ($120/năm).
+      </div>
+    </article>
+
+    <!-- P4 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">T</div>
+        <div class="persona-title">
+          <span class="persona-id">P4 · Solo Founder</span>
+          <h3>Tuấn, 33 — SaaS B2B founder, vừa pivot lần 3</h3>
+          <p class="persona-bio">Đã đọc 200 bài về pricing, churn, GTM. Mỗi quyết định lớn lại quên hết.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Tôi đã đọc 200 bài về pricing strategy, churn, GTM. Mỗi lần ra quyết định lớn tôi quên hết. Tôi cần một 'mentor ảo' đã đọc tất cả những gì tôi đã đọc."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Vault <code>founder-knowledge/</code> chứa: Paul Graham essays, YC podcast transcripts, Lenny's newsletter, customer interview notes</li>
+          <li>Trước mỗi quyết định: <code>debate: should I raise prices 2x?</code> → AI argue 2 phía dùng wiki của user</li>
+          <li>Customer interview tuần này → drop transcript → wiki tự update với pattern recognition</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49:</strong> "Mentor ảo" cá nhân hóa 24/7. Không lộ business secret cho ChatGPT cloud. <span class="badge tier-life">Lifetime $49</span>
+      </div>
+    </article>
+
+    <!-- P5 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">H</div>
+        <div class="persona-title">
+          <span class="persona-id">P5 · Lawyer · VN</span>
+          <h3>Luật sư Hằng, 36 — Văn phòng luật doanh nghiệp</h3>
+          <p class="persona-bio">Tư vấn M&amp;A, lao động, sở hữu trí tuệ. Privacy là tuyệt đối.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Khi tư vấn 1 vụ M&amp;A, tôi cần check lại các bản án, thông tư, ý kiến chuyên gia tôi đã đọc. Tôi không thể upload bản án có thông tin client lên cloud AI."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Vault <code>legal-research/</code> với sub-folder theo lĩnh vực (M&amp;A, lao động, IP)</li>
+          <li>Mỗi vụ mới → drop văn bản pháp luật + bản án liên quan → compile</li>
+          <li><code>query: điều kiện chuyển nhượng vốn doanh nghiệp FDI</code> → trả lời có citation Luật Đầu Tư + nghị định cụ thể</li>
+          <li>Generate memo cho client từ wiki → review → file-back</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49 + Studio:</strong> Privacy là tuyệt đối. <span class="badge tier-studio">Studio $199</span> phù hợp mindset "công cụ nghề". Sẵn sàng trả gấp đôi nếu có template legal-specific.
+      </div>
+    </article>
+
+    <!-- P6 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">L</div>
+        <div class="persona-title">
+          <span class="persona-id">P6 · Lecturer</span>
+          <h3>Cô Lan, 42 — Giảng viên đại học môn Marketing</h3>
+          <p class="persona-bio">Dạy cùng môn 8 năm, mỗi năm cập nhật slide với case mới.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Tôi dạy cùng môn 8 năm rồi. Mỗi năm cập nhật slide, tôi đọc lại sách + case mới. Tôi cần wiki dạy môn của tôi, link với case study cụ thể."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Vault <code>marketing-teaching/</code> với concepts như <code>[[positioning]]</code>, <code>[[STP]]</code>, <code>[[customer-journey]]</code></li>
+          <li>Đọc case Harvard mới → drop → compile → tự link với concept lý thuyết</li>
+          <li>Đầu kỳ: <code>slides: Marketing 101 chương 3 - segmentation</code> → có deck cập nhật với case mới nhất</li>
+          <li>Sinh viên hỏi câu khó → mở wiki tra → trả lời có nguồn</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49:</strong> <span class="badge tier-life">Lifetime $49</span> là decision dễ với lương giảng viên. Tích lũy 5-10 năm = không tool nào replicate được.
+      </div>
+    </article>
+
+    <!-- P7 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">K</div>
+        <div class="persona-title">
+          <span class="persona-id">P7 · Student · VN</span>
+          <h3>Khôi, 22 — Sinh viên Y khoa năm cuối</h3>
+          <p class="persona-bio">30 GB tài liệu PDF + slide bài giảng + sách giáo khoa, ôn thi tốt nghiệp.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Tôi có 30 GB tài liệu PDF + slide bài giảng + sách giáo khoa. Tôi cần hỏi đáp với chính nội dung tôi học, không phải Wikipedia."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Drop toàn bộ slide bài giảng + sách (~500 file)</li>
+          <li>Compile 2-3 ngày background</li>
+          <li>Ôn thi: chat với wiki bằng tiếng Việt — <em>"Phân biệt nhồi máu cơ tim ST chênh và không chênh?"</em></li>
+          <li>Trả lời có citation đến đúng slide bài giảng → đi ngược về nguồn để học sâu</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49:</strong> Fear of failing → willingness-to-pay cao. Nhưng segment này nhạy cảm giá — cần <span class="badge tier-student">Student $19</span> với verification.
+      </div>
+    </article>
+
+    <!-- P8 -->
+    <article class="persona">
+      <div class="persona-header">
+        <div class="persona-avatar">H</div>
+        <div class="persona-title">
+          <span class="persona-id">P8 · Lifelong Learner</span>
+          <h3>Bác Hùng, 55 — Doanh nhân về hưu</h3>
+          <p class="persona-bio">Đọc 40 cuốn sách/năm trên Kindle. Triết học + lịch sử thâm sâu.</p>
+        </div>
+      </div>
+
+      <p class="persona-quote">"Tôi đọc 40 cuốn sách/năm trên Kindle. Highlight nhiều nhưng review lại thì lười. Tôi muốn 'thư viện cá nhân biết nói chuyện'."</p>
+
+      <div class="persona-section">
+        <div class="label">Workflow</div>
+        <ol class="workflow-list">
+          <li>Export Kindle highlights → <code>raw/books/&lt;title&gt;.md</code></li>
+          <li>Compile → wiki với concept như <code>[[stoicism]]</code>, <code>[[heuristics]]</code>, <code>[[byzantine-empire]]</code></li>
+          <li>Lúc rảnh: <code>debate: free will có thật không?</code> → đọc các luận điểm AI trích từ chính sách của mình</li>
+          <li>Mỗi năm: <code>report: tổng kết sách 2026</code> → tự xuất bản blog cá nhân</li>
+        </ol>
+      </div>
+
+      <div class="why-pay">
+        <strong>Tại sao trả $49:</strong> Đối tượng có tiền, đề cao "công cụ tri thức". <span class="badge tier-life">Lifetime $49</span> — Memory Palace là "thư viện Alexandria cá nhân", emotional appeal mạnh.
+      </div>
+    </article>
+
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="section-4">
+    <h2><span class="num">04</span>Anti-personas — KHÔNG nên target</h2>
+    <p class="subtitle">Biết ai không phải khách hàng quan trọng không kém biết ai là khách hàng. Tránh waste effort vào segment sai.</p>
+
+    <div class="anti-grid">
+      <div class="anti-card">
+        <h4>Casual user</h4>
+        <p>&lt; 5 file/tháng — giá trị không justify $49.</p>
+      </div>
+      <div class="anti-card">
+        <h4>Team &gt; 5 người collaborate realtime</h4>
+        <p>Memory Palace là single-user tool, không có sync.</p>
+      </div>
+      <div class="anti-card">
+        <h4>Người không thoải mái với Markdown</h4>
+        <p>Output là Markdown — friction nhỏ nhưng có.</p>
+      </div>
+      <div class="anti-card">
+        <h4>Không có/không muốn API key</h4>
+        <p>BYOK friction là blocker — cần Trial Credits proxy giải.</p>
+      </div>
+      <div class="anti-card">
+        <h4>Mobile-first user</h4>
+        <p>Desktop-only, không có iOS/Android.</p>
+      </div>
+      <div class="anti-card">
+        <h4>Realtime collaboration</h4>
+        <p>Single-user, không phải Notion/Google Docs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="section-5">
+    <h2><span class="num">05</span>Use Case Matrix theo Vertical</h2>
+    <p class="subtitle">Bản đồ giúp ưu tiên kênh marketing và pricing tier.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Vertical</th>
+            <th>Use case dominant</th>
+            <th>Pricing tier</th>
+            <th>Volume tiềm năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Academia</strong></td><td>Literature review, thesis writing</td><td><span class="badge tier-life">Lifetime $49</span> <span class="badge tier-student">Student $19</span></td><td>Lớn nhưng giá thấp</td></tr>
+          <tr><td><strong>Consulting</strong></td><td>Project knowledge silo</td><td><span class="badge tier-studio">Studio $199</span></td><td>Nhỏ nhưng giá cao</td></tr>
+          <tr><td><strong>Content/Newsletter</strong></td><td>Source aggregation</td><td><span class="badge tier-life">Lifetime $49</span></td><td>Trung bình</td></tr>
+          <tr><td><strong>Solo Founder</strong></td><td>Strategic decision support</td><td><span class="badge tier-life">Lifetime $49</span></td><td>Nhỏ</td></tr>
+          <tr><td><strong>Legal (VN)</strong></td><td>Văn bản pháp luật + bản án</td><td><span class="badge tier-studio">Studio $199</span></td><td>Nhỏ, sticky cao</td></tr>
+          <tr><td><strong>Education</strong></td><td>Course material accumulation</td><td><span class="badge tier-life">Lifetime $49</span></td><td>Trung bình</td></tr>
+          <tr><td><strong>Student exam prep</strong></td><td>Q&amp;A với tài liệu học</td><td><span class="badge tier-student">Student $19</span></td><td>Lớn nếu có discount</td></tr>
+          <tr><td><strong>Hobbyist reader</strong></td><td>Personal library + Q&amp;A</td><td><span class="badge tier-life">Lifetime $49</span></td><td>TB, willingness cao</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 6 -->
+  <section id="section-6">
+    <h2><span class="num">06</span>Insights cho Marketing &amp; Positioning</h2>
+    <p class="subtitle">Output trực tiếp dùng được cho landing page, demo video, ad copy.</p>
+
+    <h3>Tagline candidates (test A/B)</h3>
+
+    <div class="tagline-card recommended">
+      <span class="pick">★ Khuyến nghị</span>
+      <p class="text">"Drop a PDF. Get a wiki. Chat with your knowledge."</p>
+      <p class="reason">Concrete + demo-able. Hero copy + #4 làm subhead.</p>
+    </div>
+
+    <div class="tagline-card recommended">
+      <span class="pick">★ Khuyến nghị (subhead)</span>
+      <p class="text">"$49 once. Local. Private. Yours forever."</p>
+      <p class="reason">Anti-monetization-paradox. Tách biệt khỏi sub apps.</p>
+    </div>
+
+    <div class="tagline-card">
+      <p class="text">"Your AI-powered second brain. Local. Private. Yours forever."</p>
+      <p class="reason">Privacy angle — tốt cho legal/medical segment.</p>
+    </div>
+
+    <div class="tagline-card">
+      <p class="text">"Stop reading and forgetting. Start compounding what you know."</p>
+      <p class="reason">Emotional pain — phù hợp với P3 (newsletter) và P8 (lifelong learner).</p>
+    </div>
+
+    <h3>Hero demo video 90 giây — script</h3>
+
+    <div class="timeline">
+      <div class="timeline-row"><span class="timeline-time">0–5s</span><span class="timeline-action">"You read 50 articles a week. You remember 3."</span></div>
+      <div class="timeline-row"><span class="timeline-time">5–15s</span><span class="timeline-action">Screen: drag 3 PDFs vào Memory Palace window</span></div>
+      <div class="timeline-row"><span class="timeline-time">15–30s</span><span class="timeline-action">Time-lapse: progress bar compile, wiki appears in Obsidian</span></div>
+      <div class="timeline-row"><span class="timeline-time">30–50s</span><span class="timeline-action">Type "Ctrl+K" → search → click result → đọc concept với links</span></div>
+      <div class="timeline-row"><span class="timeline-time">50–70s</span><span class="timeline-action">Mở chat → hỏi câu cross-source → answer với citation chips</span></div>
+      <div class="timeline-row"><span class="timeline-time">70–85s</span><span class="timeline-action">Click "Generate report" → markdown output xuất hiện</span></div>
+      <div class="timeline-row"><span class="timeline-time">85–90s</span><span class="timeline-action">"$49 once. Local. Private. Yours forever."</span></div>
+    </div>
+
+    <h3>Landing page sections (theo persona ưu tiên)</h3>
+
+    <ol style="font-size: 16px; line-height: 1.9; color: var(--text-secondary);">
+      <li>Hero + demo video</li>
+      <li><strong>3 core jobs</strong> (Remember / Synthesize / Produce) — không phải feature list</li>
+      <li><strong>Use cases ngang</strong> — 4 personas (Researcher / Consultant / Creator / Lifelong learner) với screenshot workflow</li>
+      <li><strong>Privacy &amp; Local-first section</strong> (đặc biệt cho VN legal/medical)</li>
+      <li>Obsidian-native angle (cho Obsidian crowd existing)</li>
+      <li>Pricing 3-tier</li>
+      <li>FAQ (BYOK, system requirements, refund)</li>
+    </ol>
+
+    <h3>Feature priorities tái-rà soát</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Priority</th><th>Feature</th><th>Vì sao</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="badge" style="background:var(--red-soft); color:var(--red);">HIGH</span></td><td>Trial Credits proxy</td><td>Mở Job 1 cho mass market</td></tr>
+          <tr><td><span class="badge" style="background:var(--red-soft); color:var(--red);">HIGH</span></td><td>Vertical templates (Legal VN, Academic, Consulting)</td><td>Bán được Studio License $199</td></tr>
+          <tr><td><span class="badge" style="background:var(--amber-soft); color:var(--amber);">MED</span></td><td>Better citation/source UX trong chat</td><td>Job 2 — synthesis là core value</td></tr>
+          <tr><td><span class="badge" style="background:var(--amber-soft); color:var(--amber);">MED</span></td><td>Output quality cho <code>report:</code> và <code>slides:</code></td><td>Job 3 — output là moment of truth</td></tr>
+          <tr><td><span class="badge" style="background:var(--green-soft); color:var(--green);">LOW</span></td><td>Realtime sync, mobile, collab</td><td>Anti-persona, không phải core JTBD</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 7 -->
+  <section id="section-7">
+    <h2><span class="num">07</span>Câu hỏi chiến lược còn mở</h2>
+
+    <div class="callout note">
+      <p><strong>1. Có nên build vertical templates không?</strong></p>
+      <p>Legal VN template + Academic template có thể justify Studio $199. Effort: 1-2 tuần mỗi template.</p>
+    </div>
+
+    <div class="callout note">
+      <p><strong>2. Student tier $19 có đáng không?</strong></p>
+      <p>Volume lớn nhưng support cost cao + dilute brand "professional tool". → Khuyến nghị: defer 6 tháng, target professional trước.</p>
+    </div>
+
+    <div class="callout note">
+      <p><strong>3. Có nên tích hợp Kindle/Readwise import?</strong></p>
+      <p>Mở persona P8 (lifelong reader) — segment có tiền + emotional buy-in cao.</p>
+    </div>
+
+    <div class="callout note">
+      <p><strong>4. Multi-language wiki?</strong></p>
+      <p>Hiện tại wiki có thể là tiếng Việt. Có nên tự detect ngôn ngữ source và chọn output language?</p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 -->
+  <section id="section-8">
+    <h2><span class="num">08</span>Action items kết luận</h2>
+
+    <div class="callout priority-high">
+      <p><strong>1. Marketing copy</strong> dựa trên <strong>Job 1/2/3</strong> thay vì feature list. Update landing page draft theo template trên.</p>
+    </div>
+
+    <div class="callout priority-high">
+      <p><strong>2. Demo video</strong> ưu tiên persona P1 (Researcher) — câu chuyện dễ hiểu nhất + universal.</p>
+    </div>
+
+    <div class="callout priority-med">
+      <p><strong>3. Soft launch beta</strong> target 20 user của 4 personas: Researcher, Consultant, Content Creator, Lifelong Learner — đo conversion + feedback.</p>
+    </div>
+
+    <div class="callout priority-med">
+      <p><strong>4. Vertical template Legal VN</strong> đáng làm Phase 10+ — sticky cao, willingness-to-pay $199 dễ.</p>
+    </div>
+
+    <div class="callout priority-low">
+      <p><strong>5. KHÔNG build feature mới</strong> ngoài 3 core jobs cho đến khi có 100 paying users — feature creep là kẻ thù.</p>
+    </div>
+
+    <hr class="ornament">
+  </section>
+
+</div>
+
+<footer>
+  <p>Memory Palace · JTBD &amp; User Stories · 2026-05-01</p>
+  <p>Source markdown: <a href="../audits/2026-05-01-JTBD-USER-STORIES.md">docs/audits/2026-05-01-JTBD-USER-STORIES.md</a> · Synthesis: <a href="../audits/2026-05-01-SYNTHESIS.md">2026-05-01-SYNTHESIS.md</a></p>
+</footer>
+
+</body>
+</html>
