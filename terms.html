@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Memory Palace</title>
+<meta name="description" content="Điều khoản sử dụng Memory Palace — gói license, hạn chế, và những gì bạn được/không được làm.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.legal-shell { padding:80px 28px; max-width:780px; margin:0 auto; }
+.legal-shell h1 { font-family:var(--serif); font-size:clamp(32px,4vw,44px); font-weight:600; letter-spacing:-0.02em; margin-bottom:8px; }
+.legal-shell .meta { color:var(--text-muted); font-family:var(--mono); font-size:13px; margin-bottom:40px; padding-bottom:16px; border-bottom:1px solid var(--rule-thin); }
+.legal-shell h2 { font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-0.01em; margin:40px 0 12px; color:var(--text); }
+.legal-shell h3 { font-family:var(--serif); font-size:18px; font-weight:600; margin:24px 0 8px; color:var(--text); }
+.legal-shell p { color:var(--text-2); margin-bottom:14px; line-height:1.7; }
+.legal-shell ul { padding-left:24px; margin-bottom:14px; }
+.legal-shell ul li { color:var(--text-2); padding:4px 0; line-height:1.6; }
+.legal-shell strong { color:var(--text); }
+.legal-shell .callout { background:var(--bg-cream); border-left:3px solid var(--accent); padding:16px 20px; border-radius:0 6px 6px 0; margin:20px 0; }
+.legal-shell .callout p:last-child { margin-bottom:0; }
+.legal-shell table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+.legal-shell th, .legal-shell td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--rule-thin); }
+.legal-shell th { background:var(--bg-soft); font-weight:600; font-size:12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); }
+.back-link { color:var(--accent); font-size:14px; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">M<span class="brand-dot">·</span>P</span>
+      <span class="brand-name">Memory Palace</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/#what">Sản phẩm</a>
+      <a href="/#pricing">Giá</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#buy" class="nav-cta">Mua $39 →</a>
+    </nav>
+  </div>
+</header>
+
+<div class="legal-shell">
+  <a href="/" class="back-link">← Trang chủ</a>
+
+  <h1>Terms of Service</h1>
+  <p class="meta">Memory Palace · Cập nhật 2026-05-02 · Phiên bản 1</p>
+
+  <div class="callout">
+    <p><strong>Tóm tắt:</strong> Bạn mua quyền dùng Memory Palace. Phần mềm thuộc về chúng tôi (license, không phải bán đứt source). Bạn được dùng cho mục đích cá nhân + thương mại nội bộ. Không được redistribute, reverse engineer để re-sell, hay claim là sản phẩm của bạn.</p>
+  </div>
+
+  <h2>1. Định nghĩa</h2>
+  <ul>
+    <li><strong>"Memory Palace"</strong> — phần mềm desktop được bán dưới các plan (Trial, Lifetime, Studio, Annual).</li>
+    <li><strong>"Bạn" / "User"</strong> — cá nhân hoặc tổ chức mua license.</li>
+    <li><strong>"Chúng tôi" / "Nhà cung cấp"</strong> — Acy Doan (cá nhân, Việt Nam), email <code>hello@memorypalace.app</code>.</li>
+    <li><strong>"License"</strong> — token Ed25519 sign cấp quyền dùng app theo plan.</li>
+  </ul>
+
+  <h2>2. Cấp quyền (License grant)</h2>
+  <h3>2.1 Lifetime Personal ($49 / early bird $39)</h3>
+  <ul>
+    <li>1 active install tại 1 thời điểm</li>
+    <li>Quyền dùng vĩnh viễn cho phiên bản v1.x</li>
+    <li>Mọi update v1.x (1.0, 1.1, 1.2...) miễn phí</li>
+    <li>v2.0 nếu có (~18-24 tháng nữa) sẽ là upgrade với giá ưu đãi (~$20). Bạn vẫn có quyền giữ v1.x dùng mãi mãi.</li>
+    <li>Không restrict cứng nhắc về việc cài laptop + desktop song song của <em>cùng 1 người</em>. Nếu cài cho team 5 người → cần Studio License.</li>
+  </ul>
+
+  <h3>2.2 Studio License ($199)</h3>
+  <ul>
+    <li>5 active machines</li>
+    <li>Phù hợp consultant, freelance studio, agency nhỏ — 1 vault / client (NDA isolation)</li>
+    <li>Mọi tính năng Lifetime + email support ưu tiên</li>
+  </ul>
+
+  <h3>2.3 Annual ($39/năm — sẽ launch sau)</h3>
+  <ul>
+    <li>1 máy, 365 ngày từ ngày activate</li>
+    <li>Tự động hết hạn — bạn cần mua lại nếu muốn tiếp tục</li>
+  </ul>
+
+  <h3>2.4 Trial (14 ngày, $0)</h3>
+  <ul>
+    <li>Full features trong 14 ngày từ lần đầu cài</li>
+    <li>Không cần thẻ tín dụng</li>
+    <li>Sau khi hết trial, app vẫn mở được nhưng giới hạn ở các Pro features (batch compile, omni-ingestion, canvas export, multi-vault)</li>
+    <li>Vault và wiki của bạn KHÔNG bị xoá khi hết trial</li>
+  </ul>
+
+  <h2>3. Bạn được làm gì</h2>
+  <ul>
+    <li>Dùng Memory Palace cho công việc cá nhân, học tập, nghiên cứu, kinh doanh nội bộ</li>
+    <li>Compile mọi loại tài liệu thuộc quyền sở hữu của bạn HOẶC bạn có quyền truy cập hợp pháp</li>
+    <li>Generate output (report, slides) và sử dụng output cho mục đích thương mại của bạn — output thuộc về bạn</li>
+    <li>Migrate vault sang công cụ khác bất cứ lúc nào (Markdown thuần, không lock-in)</li>
+    <li>Discuss / review / chia sẻ kinh nghiệm dùng Memory Palace công khai (blog, Twitter, video)</li>
+  </ul>
+
+  <h2>4. Bạn KHÔNG được làm gì</h2>
+  <ul>
+    <li><strong>Redistribute MSI installer</strong> hoặc binary cho bên thứ ba (license bind 1 user/cá nhân hoặc 5 user/Studio)</li>
+    <li><strong>Reverse engineer</strong> để recreate sản phẩm cùng tính năng và bán lại</li>
+    <li><strong>Claim Memory Palace là sản phẩm của bạn</strong> hoặc remove branding khi resell (nếu Studio dùng cho client)</li>
+    <li><strong>Bypass license verification</strong> — share key, crack signature, hay distribute key của bạn ra công khai</li>
+    <li><strong>Dùng cho mục đích phạm pháp</strong> — compile tài liệu vi phạm bản quyền của bên thứ ba (responsibility hoàn toàn thuộc về bạn)</li>
+    <li><strong>Auto-scrape hay rate-limit attack</strong> hệ thống — landing page, CMS, API</li>
+  </ul>
+
+  <h2>5. Sở hữu trí tuệ</h2>
+  <ul>
+    <li><strong>Source code Memory Palace</strong> — thuộc về Acy Doan. License hiện tại là proprietary; có thể chuyển sang open-source partial (vd source-available, AGPL) sau public launch (kế hoạch ghi rõ trong roadmap).</li>
+    <li><strong>Wiki output của bạn</strong> — thuộc về bạn 100%. Memory Palace không claim quyền gì với content trong vault của bạn.</li>
+    <li><strong>Brand "Memory Palace" + logo</strong> — trademark của Acy Doan. Bạn không được dùng cho sản phẩm của bạn.</li>
+  </ul>
+
+  <h2>6. Hỗ trợ</h2>
+  <ul>
+    <li>Trial users: cộng đồng Discord (sau khi launch)</li>
+    <li>Lifetime: email + Discord, response time 24-48h</li>
+    <li>Studio: email priority response 24h</li>
+    <li><strong>Không bao gồm:</strong> custom feature dev, training, integration consulting (paid services riêng nếu cần)</li>
+  </ul>
+
+  <h2>7. Updates và end-of-life</h2>
+  <ul>
+    <li>Chúng tôi cam kết maintain v1.x ít nhất 24 tháng kể từ ngày launch (May 2026 → May 2028).</li>
+    <li>Nếu chúng tôi sunset sản phẩm (worst case), code sẽ được public dưới license cho phép community fork — bạn không bị mất khả năng dùng app.</li>
+    <li>Vault data của bạn là Markdown thuần — sống độc lập với Memory Palace. Sunset không xoá data của bạn.</li>
+  </ul>
+
+  <h2>8. Refund</h2>
+  <p>14 ngày unconditional refund. Chi tiết: <a href="/refund.html">Refund Policy</a>.</p>
+
+  <h2>9. Disclaimer / Limitation of Liability</h2>
+  <div class="callout">
+    <p><strong>Memory Palace được cung cấp "as is".</strong> Chúng tôi không bảo đảm:</p>
+    <ul style="margin-top:8px;">
+      <li>App không có bug (sẽ có bug — chúng tôi cam kết fix)</li>
+      <li>LLM provider của bạn luôn available (OpenAI/Anthropic có thể down)</li>
+      <li>Output AI luôn chính xác (LLM hallucinate — bạn cần verify)</li>
+    </ul>
+    <p>Trách nhiệm của chúng tôi giới hạn ở số tiền bạn đã trả ($49 hoặc $199). Chúng tôi không chịu trách nhiệm cho:</p>
+    <ul style="margin-top:8px;">
+      <li>Lost productivity nếu app crash/bug</li>
+      <li>Chi phí API LLM phát sinh do bạn config sai (vd để loop infinite)</li>
+      <li>Quyết định kinh doanh / nghiên cứu / pháp lý dựa trên output của Memory Palace</li>
+      <li>Data loss nếu bạn không backup vault (vault folder thuộc về bạn — chúng tôi không có copy)</li>
+    </ul>
+  </div>
+
+  <h2>10. Governing law</h2>
+  <p>Terms này dưới luật Việt Nam. Tranh chấp giải quyết qua thương lượng email/Telegram đầu tiên. Nếu không đạt → trọng tài thương mại VN.</p>
+
+  <h2>11. Liên hệ</h2>
+  <p>
+    Email: <a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a><br>
+    Telegram: <a href="https://t.me/chunin1103">@chunin1103</a><br>
+    Founder: Acy Doan
+  </p>
+
+  <p style="margin-top:48px; font-size:13px; color:var(--text-muted); border-top:1px solid var(--rule-thin); padding-top:20px;">
+    Bằng cách cài đặt + activate license Memory Palace, bạn đồng ý với Terms này. Chúng tôi sẽ thông báo qua email khi có version mới.
+  </p>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">M<span class="brand-dot">·</span>P</span> <span class="brand-name">Memory Palace</span></div>
+      <p class="footer-tag">Bộ não thứ hai cho người đọc nghiêm túc.</p>
+    </div>
+    <div>
+      <h4>Pháp lý</h4>
+      <ul>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/refund.html">Refund policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul>
+        <li><a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a></li>
+        <li><a href="https://t.me/chunin1103">Telegram @chunin1103</a></li>
+        <li><a href="https://github.com/AlexT182">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Memory Palace · v1.0.5</p>
+  </div>
+</footer>
+
+</body>
+</html>

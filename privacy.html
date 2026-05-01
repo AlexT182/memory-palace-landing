@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Memory Palace</title>
+<meta name="description" content="Memory Palace là phần mềm local-first. Bài viết này nêu chính xác data nào ở trên máy bạn, data nào rời máy, và đi đâu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.legal-shell { padding:80px 28px; max-width:780px; margin:0 auto; }
+.legal-shell h1 { font-family:var(--serif); font-size:clamp(32px,4vw,44px); font-weight:600; letter-spacing:-0.02em; margin-bottom:8px; }
+.legal-shell .meta { color:var(--text-muted); font-family:var(--mono); font-size:13px; margin-bottom:40px; padding-bottom:16px; border-bottom:1px solid var(--rule-thin); }
+.legal-shell h2 { font-family:var(--serif); font-size:24px; font-weight:600; letter-spacing:-0.01em; margin:40px 0 12px; color:var(--text); }
+.legal-shell h3 { font-family:var(--serif); font-size:18px; font-weight:600; margin:24px 0 8px; color:var(--text); }
+.legal-shell p { color:var(--text-2); margin-bottom:14px; line-height:1.7; }
+.legal-shell ul { padding-left:24px; margin-bottom:14px; }
+.legal-shell ul li { color:var(--text-2); padding:4px 0; line-height:1.6; }
+.legal-shell strong { color:var(--text); }
+.legal-shell .callout { background:var(--bg-cream); border-left:3px solid var(--accent); padding:16px 20px; border-radius:0 6px 6px 0; margin:20px 0; }
+.legal-shell .callout p:last-child { margin-bottom:0; }
+.legal-shell table { width:100%; border-collapse:collapse; margin:16px 0; font-size:14px; }
+.legal-shell th, .legal-shell td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--rule-thin); }
+.legal-shell th { background:var(--bg-soft); font-weight:600; font-size:12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-muted); }
+.back-link { color:var(--accent); font-size:14px; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="brand">
+      <span class="brand-mark">M<span class="brand-dot">·</span>P</span>
+      <span class="brand-name">Memory Palace</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/#what">Sản phẩm</a>
+      <a href="/#pricing">Giá</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#buy" class="nav-cta">Mua $39 →</a>
+    </nav>
+  </div>
+</header>
+
+<div class="legal-shell">
+  <a href="/" class="back-link">← Trang chủ</a>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Memory Palace · Cập nhật 2026-05-02 · Phiên bản 1</p>
+
+  <div class="callout">
+    <p><strong>Tóm tắt 30 giây:</strong> Memory Palace là <strong>local-first</strong>. Tài liệu thô + wiki output đều ở trên máy bạn. Khi compile/chat, prompt được gửi đến <strong>API LLM bạn cung cấp</strong> (OpenAI, Anthropic, DeepSeek...). Chúng tôi không có server backend, không lưu data của bạn.</p>
+  </div>
+
+  <h2>1. Data ở đâu?</h2>
+
+  <h3>1.1 Trên máy bạn (KHÔNG rời máy)</h3>
+  <ul>
+    <li><strong>Vault</strong> — thư mục bạn chọn (ví dụ <code>D:\my-vault</code>). Chứa raw files, wiki Markdown, outputs, logs, config.</li>
+    <li><strong>API keys</strong> — lưu trong <code>%APPDATA%\MemoryPalace\.env</code>, mã hoá bằng Windows DPAPI (chỉ tài khoản Windows hiện tại đọc được).</li>
+    <li><strong>License key</strong> — <code>%APPDATA%\MemoryPalace\license.json</code>.</li>
+    <li><strong>Install metadata</strong> — <code>%APPDATA%\MemoryPalace\install.json</code> (timestamp lần cài đầu, machine fingerprint cho HMAC anti-tamper).</li>
+  </ul>
+
+  <h3>1.2 Rời máy (chúng tôi <em>không</em> thấy)</h3>
+  <p>Khi bạn compile file hoặc chat với wiki, prompt + content được gửi đến <strong>provider LLM bạn config</strong> qua HTTPS:</p>
+  <ul>
+    <li>OpenAI (api.openai.com) — nếu dùng GPT-4o</li>
+    <li>Anthropic (api.anthropic.com) — nếu dùng Claude</li>
+    <li>DeepSeek, Google Gemini, Mistral, Groq... — tuỳ provider bạn chọn</li>
+  </ul>
+  <p>Mỗi provider có chính sách privacy riêng — chúng tôi không can thiệp. Bạn chọn provider nào, data đi tới provider đó. Memory Palace là middleman client-side, không relay qua server của chúng tôi.</p>
+
+  <h3>1.3 Nếu bạn bật Trial Credits proxy (optional, tương lai)</h3>
+  <p>Khi bạn cấu hình <code>LLM_PROXY_URL</code> để dùng gateway của chúng tôi (giúp bạn dùng app mà không cần mua API key riêng):</p>
+  <ul>
+    <li>Prompt + content sẽ đi qua proxy server của chúng tôi → LLM provider thật</li>
+    <li>Chúng tôi <strong>không lưu prompt</strong>, chỉ log: timestamp + token count + email user (cho usage metering)</li>
+    <li>Log retention: 30 ngày, sau đó tự xoá</li>
+    <li>Tính năng này <strong>opt-in</strong>, default OFF</li>
+  </ul>
+
+  <h2>2. Data nào chúng tôi có?</h2>
+
+  <table>
+    <thead><tr><th>Loại data</th><th>Tại sao có</th><th>Lưu ở đâu</th></tr></thead>
+    <tbody>
+      <tr><td>Email mua hàng</td><td>Sign license token + gửi email download link</td><td>Cloudflare D1 (DB)</td></tr>
+      <tr><td>Plan + amount</td><td>Audit + refund</td><td>Cloudflare D1</td></tr>
+      <tr><td>Payment method + ref</td><td>Reconcile bank statements / LS records</td><td>Cloudflare D1</td></tr>
+      <tr><td>License token đã sign</td><td>Reissue khi user đổi máy</td><td>Cloudflare D1</td></tr>
+      <tr><td>Audit log</td><td>Compliance + debug</td><td>Cloudflare D1</td></tr>
+    </tbody>
+  </table>
+
+  <p>Chúng tôi <strong>KHÔNG</strong> có:</p>
+  <ul>
+    <li>Tài liệu, wiki, hay nội dung công việc của bạn</li>
+    <li>API key của bạn (chỉ encrypted ở máy bạn)</li>
+    <li>Lịch sử chat / compile / query của bạn</li>
+    <li>Telemetry / analytics in-app (default OFF; nếu bật Sentry opt-in tương lai sẽ thông báo rõ)</li>
+  </ul>
+
+  <h2>3. Tài liệu của bạn KHÔNG bao giờ rời máy bạn</h2>
+  <p>Đây là <strong>guarantee cốt lõi</strong> của sản phẩm:</p>
+  <ul>
+    <li>Vault directory hoàn toàn dưới quyền filesystem của bạn — sync iCloud/Dropbox/Drive nếu <em>bạn</em> chọn, không phải chúng tôi.</li>
+    <li>Memory Palace không có server backend. App là native Tauri + Python sidecar chạy trên máy bạn.</li>
+    <li>Connection duy nhất: tới API LLM bạn cấu hình.</li>
+    <li>Khi bạn delete vault folder, mọi data của bạn biến mất vĩnh viễn — chúng tôi không có copy.</li>
+  </ul>
+
+  <h2>4. Cookie & analytics trên landing page (memorypalace.app)</h2>
+  <p>Landing page dùng:</p>
+  <ul>
+    <li><strong>Plausible Analytics</strong> (sẽ deploy) — privacy-first analytics, không cookie, không personal data, GDPR/CCPA compliant out-of-the-box. Chỉ track: page views, referrer, country (IP-derived).</li>
+    <li><strong>Cloudflare</strong> (CDN/proxy) — lưu IP truy cập trong 24h cho mục đích anti-DDoS.</li>
+    <li><strong>KHÔNG có</strong> Google Analytics, Facebook Pixel, hay tracking cross-site nào.</li>
+  </ul>
+
+  <h2>5. Quyền của bạn</h2>
+  <ul>
+    <li><strong>Yêu cầu xoá data:</strong> email <a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a> với order ID — chúng tôi xoá record trong D1 trong 7 ngày.</li>
+    <li><strong>Yêu cầu export data:</strong> chúng tôi gửi JSON dump tất cả record liên quan email bạn trong 7 ngày.</li>
+    <li><strong>Refund:</strong> 14 ngày unconditional. Không cần lý do. Xem <a href="/refund.html">Refund policy</a>.</li>
+    <li><strong>License revoke:</strong> bạn có thể yêu cầu deactivate license bất cứ lúc nào.</li>
+  </ul>
+
+  <h2>6. Thay đổi policy này</h2>
+  <p>Khi có thay đổi đáng kể (vd: thêm telemetry mới, tích hợp service mới), chúng tôi sẽ:</p>
+  <ul>
+    <li>Cập nhật ngày ở đầu trang</li>
+    <li>Email thông báo cho mọi paying user ít nhất 14 ngày trước khi áp dụng</li>
+    <li>Lưu version cũ tại <code>/privacy-v1.html</code>, <code>/privacy-v2.html</code>... để bạn so sánh</li>
+  </ul>
+
+  <h2>7. Liên hệ</h2>
+  <p>
+    Email: <a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a><br>
+    Telegram: <a href="https://t.me/chunin1103">@chunin1103</a><br>
+    Founder: Acy Doan, Việt Nam
+  </p>
+
+  <p style="margin-top:48px; font-size:13px; color:var(--text-muted); border-top:1px solid var(--rule-thin); padding-top:20px;">
+    Privacy Policy này được viết bằng tiếng Việt vì target audience chính là VN/SEA. English version có thể request qua email — chúng tôi gửi tay.
+  </p>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">M<span class="brand-dot">·</span>P</span> <span class="brand-name">Memory Palace</span></div>
+      <p class="footer-tag">Bộ não thứ hai cho người đọc nghiêm túc.</p>
+    </div>
+    <div>
+      <h4>Pháp lý</h4>
+      <ul>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms of Service</a></li>
+        <li><a href="/refund.html">Refund policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul>
+        <li><a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a></li>
+        <li><a href="https://t.me/chunin1103">Telegram @chunin1103</a></li>
+        <li><a href="https://github.com/AlexT182">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 Memory Palace · v1.0.5</p>
+  </div>
+</footer>
+
+</body>
+</html>
