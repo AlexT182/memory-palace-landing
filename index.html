@@ -3,16 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Memory Palace — bộ não thứ hai cho người đọc nghiêm túc</title>
-<meta name="description" content="Bạn đọc 50 article tuần trước. Nhớ được 3. Đó không phải vấn đề trí nhớ — đó là vấn đề công cụ. Memory Palace tự đọc tài liệu của bạn và biến chúng thành kho tri thức có cấu trúc. Local-first. $49 once.">
-<meta property="og:title" content="Memory Palace — bộ não thứ hai cho người đọc nghiêm túc">
-<meta property="og:description" content="Drop một PDF. Nhận về một trang wiki. Hỏi nó bất cứ lúc nào. $49 mua một lần. Local. Riêng tư. Của bạn vĩnh viễn.">
+<title>Memory Palace — Bộ não thứ hai cho người đọc nhiều</title>
+<meta name="description" content="Bạn đọc 50 bài tuần trước. Nhớ được 3. Memory Palace tự đọc tài liệu của bạn và biến chúng thành kho kiến thức có liên kết, tìm kiếm được. Chạy 100% trên máy bạn.">
+<meta property="og:title" content="Memory Palace — Bộ não thứ hai cho người đọc nhiều">
+<meta property="og:description" content="Drop một file PDF. Nhận về một trang có liên kết. Hỏi nó bất cứ lúc nào. $39 mua một lần. Riêng tư. Của bạn vĩnh viễn.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0b1e3f">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<style>
+/* i18n toggle: hide opposite-language elements */
+html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !important; }
+.lang-toggle {
+  display:inline-flex; align-items:center; gap:6px;
+  background:transparent; border:1px solid var(--rule-soft);
+  padding:6px 12px; border-radius:99px; cursor:pointer;
+  font-size:12px; font-weight:600; color:var(--text-2);
+  font-family:var(--mono); letter-spacing:0.04em;
+  transition:all 120ms;
+}
+.lang-toggle:hover { border-color:var(--accent); color:var(--accent); }
+.lang-toggle .active { color:var(--accent); }
+.lang-toggle .sep { color:var(--text-muted); margin:0 2px; }
+</style>
 </head>
 <body>
 
@@ -20,44 +37,67 @@
 <header class="nav">
   <div class="container nav-inner">
     <a href="/" class="brand">
-      <span class="brand-mark">M<span class="brand-dot">·</span>P</span>
+      <img src="/favicon.png" alt="" width="28" height="28" style="border-radius:6px; display:block;">
       <span class="brand-name">Memory Palace</span>
     </a>
     <nav class="nav-links">
-      <a href="#story">Câu chuyện</a>
-      <a href="#what">Sản phẩm</a>
-      <a href="#for-who">Dành cho ai</a>
-      <a href="#pricing">Giá</a>
+      <a href="#story" lang="vi">Câu chuyện</a>
+      <a href="#story" lang="en">Story</a>
+      <a href="#what" lang="vi">Sản phẩm</a>
+      <a href="#what" lang="en">Product</a>
+      <a href="#for-who" lang="vi">Dành cho ai</a>
+      <a href="#for-who" lang="en">Who's it for</a>
+      <a href="#pricing" lang="vi">Giá</a>
+      <a href="#pricing" lang="en">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a href="#buy" class="nav-cta">Mua $39 →</a>
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+        <span class="vi-lbl">VI</span><span class="sep">·</span><span class="en-lbl">EN</span>
+      </button>
+      <a href="#buy" class="nav-cta" lang="vi">Mua $39 →</a>
+      <a href="#buy" class="nav-cta" lang="en">Buy $39 →</a>
     </nav>
   </div>
 </header>
 
-<!-- HERO — pain-led, no fluff -->
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-text">
-      <p class="hero-eyebrow">v1.0.4 · Windows desktop · Local-first</p>
-      <h1 class="hero-h1">
-        Bạn đọc <span class="num-highlight">50 article</span> tuần trước.<br>
+      <p class="hero-eyebrow">v1.0.6 · Windows · Riêng tư · Mua một lần</p>
+
+      <h1 class="hero-h1" lang="vi">
+        Bạn đọc <span class="num-highlight">50 bài</span> tuần trước.<br>
         Bạn nhớ được <span class="num-highlight">3</span>.
       </h1>
-      <p class="hero-sub">
-        Đó không phải vấn đề trí nhớ. Đó là vấn đề <em>công cụ</em>. Memory Palace tự đọc PDF, video, article của bạn — biến chúng thành wiki có cấu trúc, link nội bộ, hỏi đáp được. Chạy 100% trên máy bạn.
+      <h1 class="hero-h1" lang="en">
+        You read <span class="num-highlight">50 articles</span> last week.<br>
+        You remember <span class="num-highlight">3</span>.
+      </h1>
+
+      <p class="hero-sub" lang="vi">
+        Đó không phải vì bạn quên. Đó là vì <em>không có công cụ phù hợp</em>. Memory Palace đọc giúp bạn — sách, bài viết, video, tài liệu — và biến chúng thành <em>một kho kiến thức của riêng bạn</em>: có cấu trúc, liên kết với nhau, tìm kiếm được, hỏi đáp được.
       </p>
+      <p class="hero-sub" lang="en">
+        Not because your memory is bad. Because the tools you've been given don't fit. Memory Palace reads <em>for you</em> — books, articles, videos, documents — and turns them into <em>your own knowledge library</em>: structured, cross-linked, searchable, askable.
+      </p>
+
       <div class="hero-cta">
-        <a href="#buy" class="btn btn-primary">Mua Lifetime · $39</a>
-        <a href="#story" class="btn btn-link">↓ Đọc câu chuyện trước</a>
+        <a href="#buy" class="btn btn-primary" lang="vi">Mua một lần · $39</a>
+        <a href="#buy" class="btn btn-primary" lang="en">Buy once · $39</a>
+        <a href="#story" class="btn btn-link" lang="vi">↓ Đọc câu chuyện trước</a>
+        <a href="#story" class="btn btn-link" lang="en">↓ Read the story first</a>
       </div>
-      <p class="hero-fineprint">
-        Trial 14 ngày miễn phí · Refund 14 ngày · 100% local · Không subscription
+      <p class="hero-fineprint" lang="vi">
+        Dùng thử 14 ngày miễn phí · Hoàn tiền 14 ngày · Dữ liệu trên máy bạn · Không phí hàng tháng
+      </p>
+      <p class="hero-fineprint" lang="en">
+        14-day free trial · 14-day refund · Data on your machine · No subscription
       </p>
     </div>
 
     <div class="hero-visual">
-      <!-- Animated mockup of the actual app workflow -->
-      <div class="mockup" aria-label="Demo Memory Palace: drop file, AI compile thành wiki, chat với citation">
+      <!-- Animated mockup -->
+      <div class="mockup">
         <div class="mockup-chrome">
           <span class="dot dot-r"></span>
           <span class="dot dot-y"></span>
@@ -67,81 +107,100 @@
         <div class="mockup-body">
           <aside class="mockup-side">
             <div class="side-section">
-              <div class="side-label">KIẾN THỨC</div>
+              <div class="side-label" lang="vi">KIẾN THỨC</div>
+              <div class="side-label" lang="en">KNOWLEDGE</div>
               <button class="side-btn side-btn-primary">
                 <span>⚡</span>
-                <span>Biên dịch <span class="pending-badge">3</span></span>
+                <span lang="vi">Đọc giúp <span class="pending-badge">3</span></span>
+                <span lang="en">Read for me <span class="pending-badge">3</span></span>
               </button>
-              <button class="side-btn">📁 Mở vault</button>
-              <button class="side-btn">🔍 Tìm (Ctrl+K)</button>
+              <button class="side-btn"><span lang="vi">📁 Mở thư mục</span><span lang="en">📁 Open folder</span></button>
+              <button class="side-btn"><span lang="vi">🔍 Tìm (Ctrl+K)</span><span lang="en">🔍 Search (Ctrl+K)</span></button>
             </div>
             <div class="side-section">
-              <div class="side-label">HOẠT ĐỘNG</div>
+              <div class="side-label" lang="vi">VỪA THÊM</div>
+              <div class="side-label" lang="en">RECENT</div>
               <div class="activity-item">
                 <span class="activity-dot"></span>
-                <span class="activity-text">paper.pdf · vừa nạp</span>
+                <span class="activity-text">paper.pdf</span>
               </div>
               <div class="activity-item">
                 <span class="activity-dot activity-old"></span>
-                <span class="activity-text">notes.docx · 5p trước</span>
+                <span class="activity-text">notes.docx</span>
               </div>
             </div>
           </aside>
           <main class="mockup-main">
-            <!-- Stage A: file drop -->
             <div class="stage stage-1">
               <div class="drop-zone">
                 <div class="drop-icon">📄</div>
-                <p class="drop-text">Thả file PDF vào đây</p>
-                <p class="drop-sub">PDF · DOCX · YouTube · GitHub repo</p>
+                <p class="drop-text" lang="vi">Thả file vào đây</p>
+                <p class="drop-text" lang="en">Drop file here</p>
+                <p class="drop-sub">PDF · DOCX · YouTube · Web</p>
               </div>
               <div class="file-flying">
                 <span>📕</span>
-                <span class="file-name">attention-is-all-you-need.pdf</span>
+                <span class="file-name">attention-paper.pdf</span>
               </div>
             </div>
-            <!-- Stage B: compile progress -->
             <div class="stage stage-2">
               <div class="compile-card">
                 <div class="compile-row">
                   <span class="compile-spinner"></span>
-                  <span class="compile-name">attention-is-all-you-need.pdf</span>
+                  <span class="compile-name">attention-paper.pdf</span>
                   <span class="compile-pct">87%</span>
                 </div>
                 <div class="compile-bar">
                   <div class="compile-bar-fill"></div>
                 </div>
-                <div class="compile-step">→ Tạo concept · còn ~12s</div>
+                <div class="compile-step" lang="vi">→ Đang tóm tắt · còn ~12s</div>
+                <div class="compile-step" lang="en">→ Summarizing · ~12s left</div>
               </div>
             </div>
-            <!-- Stage C: wiki materializes -->
             <div class="stage stage-3">
               <article class="wiki-card">
                 <div class="wiki-frontmatter">
-                  <span class="fm-tag">concepts/attention-mechanism.md</span>
+                  <span class="fm-tag" lang="vi">ghi-chú/cơ-chế-attention</span>
+                  <span class="fm-tag" lang="en">notes/attention-mechanism</span>
                 </div>
-                <h3 class="wiki-title">Attention Mechanism</h3>
-                <p class="wiki-body">
-                  Cơ chế cho phép model tập trung vào các phần khác nhau của input. Khắc phục bottleneck của <span class="link-pulse">[[encoder-decoder]]</span> RNN bằng cách tính trọng số trực tiếp giữa mọi cặp token...
+                <h3 class="wiki-title" lang="vi">Cơ chế Attention</h3>
+                <h3 class="wiki-title" lang="en">Attention Mechanism</h3>
+                <p class="wiki-body" lang="vi">
+                  Cách AI tập trung vào các phần quan trọng của câu. Khắc phục điểm yếu của <span class="link-pulse">[[mạng-RNN]]</span> — không cần đọc tuần tự nữa...
+                </p>
+                <p class="wiki-body" lang="en">
+                  How AI focuses on the important parts of a sentence. Fixes the weakness of <span class="link-pulse">[[rnn-network]]</span> — no more reading word by word...
                 </p>
                 <div class="wiki-meta">
-                  <span class="wiki-link">→ self-attention</span>
-                  <span class="wiki-link">→ multi-head</span>
-                  <span class="wiki-link">→ transformer</span>
+                  <span class="wiki-link" lang="vi">→ liên kết 1</span>
+                  <span class="wiki-link" lang="en">→ link 1</span>
+                  <span class="wiki-link" lang="vi">→ liên kết 2</span>
+                  <span class="wiki-link" lang="en">→ link 2</span>
+                  <span class="wiki-link" lang="vi">→ liên kết 3</span>
+                  <span class="wiki-link" lang="en">→ link 3</span>
                 </div>
               </article>
             </div>
-            <!-- Stage D: chat with citation -->
             <div class="stage stage-4">
               <div class="chat-thread">
-                <div class="chat-msg chat-user">
-                  Attention khác RNN ở điểm nào?
+                <div class="chat-msg chat-user" lang="vi">
+                  Bài này nói về điều gì khác so với nghiên cứu cũ?
                 </div>
-                <div class="chat-msg chat-ai">
-                  <p>RNN xử lý tuần tự, attention song song. Ưu thế: <span class="cite">[[attention-mechanism]]</span> tính được long-range dependency mà không bị vanishing gradient.</p>
+                <div class="chat-msg chat-user" lang="en">
+                  How is this different from older research?
+                </div>
+                <div class="chat-msg chat-ai" lang="vi">
+                  <p>Khác ở chỗ AI không cần đọc tuần tự — nó nhìn cả câu một lúc. Xem <span class="cite">[[cơ-chế-attention]]</span> để biết thêm.</p>
+                  <div class="cite-chips">
+                    <span class="cite-chip">📄 Cơ chế Attention</span>
+                    <span class="cite-chip">📄 Mô hình Transformer</span>
+                  </div>
+                </div>
+                <div class="chat-msg chat-ai" lang="en">
+                  <p>It looks at the whole sentence at once instead of word by word. See <span class="cite">[[attention-mechanism]]</span> for the full breakdown.</p>
                   <div class="cite-chips">
                     <span class="cite-chip">📄 Attention Mechanism</span>
-                    <span class="cite-chip">📄 Transformer</span>
+                    <span class="cite-chip">📄 Transformer Model</span>
                   </div>
                 </div>
               </div>
@@ -149,337 +208,464 @@
           </main>
         </div>
       </div>
-      <p class="mockup-caption">Drop · Compile · Wiki materializes · Chat với nguồn — vòng lặp 90 giây</p>
+      <p class="mockup-caption" lang="vi">Thả file · Đọc giúp · Có ghi chú · Hỏi đáp được — chỉ trong 90 giây</p>
+      <p class="mockup-caption" lang="en">Drop · Read · Notes appear · Ask questions — 90 seconds</p>
     </div>
   </div>
 </section>
 
-<!-- INTERLUDE — single brutal observation -->
+<!-- INTERLUDE -->
 <section class="interlude">
   <div class="container interlude-inner">
-    <p>
-      Bạn đã <em>highlight</em> 847 đoạn trên Kindle năm ngoái. Bạn save 200 article vào Notion. Có 30 PDF đang nằm im trong thư mục Downloads. Khi cần dùng, bạn vẫn mở Google.
+    <p lang="vi">
+      Bạn đã đánh dấu 800+ đoạn trong sách Kindle năm ngoái. Save 200 bài vào Notion. Có 30 file PDF nằm im trong Downloads. Khi cần dùng — bạn vẫn mở Google.
     </p>
-    <p class="interlude-stab">
-      Tài liệu chỉ thực sự "thuộc về bạn" khi bạn có thể tìm lại + trích lại nó trong 10 giây.
+    <p lang="en">
+      You highlighted 800+ passages on Kindle last year. Saved 200 articles to Notion. Have 30 PDFs frozen in Downloads. When you actually need any of it — you still open Google.
+    </p>
+    <p class="interlude-stab" lang="vi">
+      Tài liệu chỉ thực sự "thuộc về bạn" khi bạn có thể tìm lại + trích dẫn nó trong 10 giây.
+    </p>
+    <p class="interlude-stab" lang="en">
+      Knowledge is only "yours" when you can pull it up and quote it in 10 seconds.
     </p>
   </div>
 </section>
 
-<!-- THE STORY — pain narrative -->
+<!-- STORY -->
 <section id="story" class="story">
   <div class="container story-inner">
-    <p class="section-kicker">Câu chuyện</p>
-    <h2 class="serif">Tôi build cái này vì tôi mệt.</h2>
+    <p class="section-kicker" lang="vi">Câu chuyện</p>
+    <p class="section-kicker" lang="en">The story</p>
+    <h2 class="serif" lang="vi">Tôi làm cái này vì tôi mệt.</h2>
+    <h2 class="serif" lang="en">I built this because I was tired.</h2>
 
-    <div class="story-prose">
-      <p>
-        Hai năm trước tôi bắt đầu nghiêm túc với việc đọc — paper AI, sách triết học, post YC. Tôi mua Kindle, dùng Obsidian, save mọi thứ vào Notion với hệ thống tag công phu. Tôi nghĩ mình đang xây "second brain".
-      </p>
-      <p>
-        <strong>Sự thật:</strong> Tôi đang xây nghĩa địa kỹ thuật số. Highlight đầy nhưng không bao giờ đọc lại. Note tag tốt nhưng không liên kết. Khi cần một ý từ paper đọc 6 tháng trước, tôi vẫn — như bao người — mở ChatGPT và hỏi <em>chung chung</em>.
-      </p>
-      <p>
-        Tôi nhận ra vấn đề không phải <strong>lưu</strong>. Vấn đề là <strong>tiêu hoá</strong>. Đọc xong rồi gì? Não không có thời gian + năng lượng để chắt lọc, kết nối, viết lại. Mà nếu không làm 3 việc đó, đọc nhiều cũng = không đọc.
-      </p>
-      <p>
-        AI bây giờ làm được. Một LLM có thể đọc 50 trang PDF trong 30 giây, viết tóm tắt, trích insight, link với những gì bạn đã đọc trước. Câu hỏi chỉ là: <em>ai làm cho cá nhân, local, không upload data lên cloud?</em>
-      </p>
-      <p>
-        Đó là Memory Palace. Tôi build cho chính mình. Tôi mệt với Notion. Tôi không tin Mem.ai (cloud-only). Tôi muốn data ở trên ổ cứng của tôi, mở được bằng Obsidian, export được lúc nào cũng được. Và tôi muốn mua một lần — không subscription thêm vào đời sống.
-      </p>
-      <p class="story-sign">
-        — Acy Doan, founder
-      </p>
+    <div class="story-prose" lang="vi">
+      <p>Hai năm trước tôi bắt đầu đọc nghiêm túc — sách, bài báo khoa học, blog về startup. Tôi mua Kindle, dùng Obsidian, lưu mọi thứ vào Notion với hệ thống tag công phu. Tôi nghĩ mình đang xây "bộ não thứ hai".</p>
+      <p><strong>Sự thật:</strong> Tôi đang xây nghĩa trang số. Đánh dấu nhiều nhưng không bao giờ đọc lại. Note tag tốt nhưng không liên kết với nhau. Khi cần một ý từ bài đọc 6 tháng trước, tôi vẫn — như mọi người khác — mở ChatGPT và hỏi <em>chung chung</em>.</p>
+      <p>Vấn đề không phải <strong>lưu</strong>. Vấn đề là <strong>tiêu hoá</strong>. Đọc xong rồi sao? Não không có thời gian + năng lượng để chắt lọc, kết nối, viết lại. Mà nếu không làm 3 việc đó, đọc nhiều cũng bằng không đọc.</p>
+      <p>AI bây giờ làm được. Trong 30 giây nó đọc xong 50 trang PDF, viết tóm tắt, tìm điểm chính, liên kết với những gì bạn đã đọc trước. Câu hỏi chỉ là: <em>ai làm cho cá nhân, riêng tư, không upload tài liệu của bạn lên cloud của ai cả?</em></p>
+      <p>Đó là Memory Palace. Tôi làm cho chính mình. Tôi mệt với Notion. Tôi không tin các app cloud (data của họ, không phải của tôi). Tôi muốn tài liệu nằm trên ổ cứng của tôi, mở được bằng Obsidian, xuất ra bất cứ định dạng nào tôi cần. Và tôi muốn mua một lần — không thêm phí hàng tháng nữa vào đời sống.</p>
+      <p class="story-sign">— Acy Doan, người làm</p>
+    </div>
+
+    <div class="story-prose" lang="en">
+      <p>Two years ago I got serious about reading — books, research papers, startup essays. I bought a Kindle, used Obsidian, saved everything to Notion with an elaborate tag system. I thought I was building a "second brain".</p>
+      <p><strong>The truth:</strong> I was building a digital cemetery. Highlighted a lot, never re-read. Notes well-tagged, not linked. When I needed an idea from something I read six months ago, I still — like everyone else — opened ChatGPT and asked it <em>generally</em>.</p>
+      <p>The problem isn't <strong>storage</strong>. It's <strong>digestion</strong>. After reading, then what? The brain doesn't have time and energy to distill, connect, rewrite. And without those three things, reading a lot equals reading nothing.</p>
+      <p>AI can do this now. In 30 seconds it reads 50 pages of PDF, writes a summary, pulls out the key claims, links to things you've already read. The only question is: <em>who builds it for individuals, private, without uploading your stuff to anyone's cloud?</em></p>
+      <p>That's Memory Palace. I built it for myself. I was tired of Notion. I don't trust cloud apps (their data, not mine). I want my files on my drive, openable with Obsidian, exportable to anything. And I want to pay once — not add another monthly bill to my life.</p>
+      <p class="story-sign">— Acy Doan, the maker</p>
     </div>
   </div>
 </section>
 
-<!-- WHAT IT IS — anti-feature framing -->
+<!-- WHAT IT IS -->
 <section id="what" class="what">
   <div class="container">
-    <p class="section-kicker">Sản phẩm</p>
-    <h2 class="serif">Không phải note app. Không phải chatbot.<br>Là <em>dây chuyền tiêu hoá</em> tài liệu.</h2>
+    <p class="section-kicker" lang="vi">Sản phẩm</p>
+    <p class="section-kicker" lang="en">The product</p>
+    <h2 class="serif" lang="vi">Không phải app ghi chú. Không phải chatbot.<br>Là <em>chiếc máy đọc thay bạn</em>.</h2>
+    <h2 class="serif" lang="en">Not a notes app. Not a chatbot.<br>It's <em>the machine that reads for you</em>.</h2>
 
     <div class="what-grid">
       <div class="what-not">
-        <p class="what-label what-label-no">KHÔNG PHẢI</p>
+        <p class="what-label what-label-no" lang="vi">KHÔNG PHẢI</p>
+        <p class="what-label what-label-no" lang="en">NOT</p>
         <ul class="what-list">
-          <li>
-            <strong>Note app</strong> như Notion, Obsidian — nơi <em>bạn</em> ngồi viết.
-          </li>
-          <li>
-            <strong>Chatbot</strong> như ChatGPT — biết mọi thứ chung chung, không biết <em>kiến thức của bạn</em>.
-          </li>
-          <li>
-            <strong>RAG cloud</strong> như NotebookLM, Mem.ai — data của bạn nằm trên server của họ.
-          </li>
-          <li>
-            <strong>File converter</strong> như Pandoc — chỉ đổi định dạng, không tạo cấu trúc.
-          </li>
+          <li lang="vi"><strong>App ghi chú</strong> như Notion, Obsidian — nơi <em>bạn</em> ngồi viết.</li>
+          <li lang="en"><strong>A notes app</strong> like Notion, Obsidian — where <em>you</em> sit and write.</li>
+          <li lang="vi"><strong>Chatbot</strong> như ChatGPT — biết chung chung, không biết <em>nội dung của bạn</em>.</li>
+          <li lang="en"><strong>A chatbot</strong> like ChatGPT — knows the world generally, not <em>your stuff</em> specifically.</li>
+          <li lang="vi"><strong>App cloud</strong> như NotebookLM, Mem.ai — tài liệu của bạn ở trên server của họ.</li>
+          <li lang="en"><strong>A cloud app</strong> like NotebookLM, Mem.ai — your files live on their servers.</li>
+          <li lang="vi"><strong>Công cụ đổi định dạng</strong> như Pandoc — chỉ chuyển file, không hiểu nội dung.</li>
+          <li lang="en"><strong>A file converter</strong> like Pandoc — moves files, doesn't understand them.</li>
         </ul>
       </div>
       <div class="what-is">
-        <p class="what-label what-label-yes">LÀ</p>
-        <p class="what-quote">
-          "Một dây chuyền sản xuất tri thức cá nhân. Drop tài liệu thô vào — AI <em>tự đọc</em>, viết tóm tắt, trích concept, link với những gì bạn đã đọc trước. Output là Markdown chuẩn Obsidian. Chạy 100% trên máy bạn. Bạn dùng API key của bạn."
+        <p class="what-label what-label-yes" lang="vi">LÀ</p>
+        <p class="what-label what-label-yes" lang="en">IS</p>
+        <p class="what-quote" lang="vi">
+          "Một chiếc máy đọc thay bạn. Bạn thả tài liệu vào — AI <em>đọc</em>, viết tóm tắt, rút ra điểm chính, liên kết với những gì bạn đã đọc trước. Output là file ghi chú thường (Markdown) trên ổ cứng của bạn. Mọi thứ chạy trên máy bạn. Bạn dùng tài khoản AI (OpenAI hoặc Claude) của bạn."
         </p>
-        <p class="what-attrib">— ý tưởng gốc lấy từ Andrej Karpathy's <a href="https://www.youtube.com/watch?v=hM_h0UA7upI" rel="noopener" target="_blank">workflow</a></p>
+        <p class="what-quote" lang="en">
+          "A machine that reads for you. Drop a document in — AI <em>reads it</em>, writes a summary, extracts key points, links it with everything you've read before. Output is plain text notes (Markdown) on your hard drive. Everything runs on your machine. You use your own AI account (OpenAI or Claude)."
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- A DAY IN THE LIFE — narrative user story -->
+<!-- A DAY -->
 <section class="day">
   <div class="container">
-    <p class="section-kicker">Một ngày của Sarah</p>
-    <h2 class="serif">Cùng một bộ tài liệu. Trước và sau.</h2>
+    <p class="section-kicker" lang="vi">Một ngày của Sarah</p>
+    <p class="section-kicker" lang="en">Sarah's day</p>
+    <h2 class="serif" lang="vi">Cùng một chồng tài liệu. Trước và sau.</h2>
+    <h2 class="serif" lang="en">Same stack of documents. Before and after.</h2>
 
     <div class="day-grid">
       <div class="day-col day-before">
-        <div class="day-tag day-tag-red">TRƯỚC</div>
-        <h3 class="serif-md">Sarah, 27, PhD năm 3</h3>
-        <p>Một thứ Hai bình thường. 8 paper arXiv mới chờ đọc trong tab Chrome. Sarah uống cà phê, mở paper đầu tiên.</p>
-        <p>11h sáng: đã đọc 2 paper. Highlight bằng plugin. Copy quote vào Notion. Mở tab Zotero để check xem paper này có liên quan đến cái cô đọc tuần trước không. <em>Nhớ mang máng nhưng không chắc</em>.</p>
-        <p>14h: ăn xong, mệt, định tiếp tục paper 3 nhưng quyết định scroll Twitter "5 phút". Đến 15h30 vẫn chưa quay lại.</p>
-        <p>Cuối tuần: cô viết literature review chương 2. Mở 12 tab paper. Ctrl-F. Scroll. Copy paste. Fight với hallucination khi hỏi ChatGPT để gom ý. Nộp lúc 2h sáng Chủ nhật.</p>
-        <p class="day-result day-result-bad">→ 8 giờ làm việc / paper. 60% thời gian = re-read.</p>
+        <div class="day-tag day-tag-red" lang="vi">TRƯỚC</div>
+        <div class="day-tag day-tag-red" lang="en">BEFORE</div>
+        <h3 class="serif-md" lang="vi">Sarah, 27, học thạc sĩ năm 2</h3>
+        <h3 class="serif-md" lang="en">Sarah, 27, second-year master's student</h3>
+        <p lang="vi">Sáng thứ Hai. 8 bài báo nghiên cứu mới đang chờ trong các tab Chrome. Sarah uống cà phê, mở bài đầu.</p>
+        <p lang="en">Monday morning. 8 new research papers waiting in Chrome tabs. Sarah grabs coffee, opens the first one.</p>
+        <p lang="vi">11h sáng: đọc xong 2 bài. Đánh dấu, copy ý chính sang Notion. Lại mở Zotero xem bài này có liên quan đến bài đã đọc tuần trước không. <em>Nhớ máng máng nhưng không chắc</em>.</p>
+        <p lang="en">11am: 2 papers down. Highlights, copy-paste to Notion. Opens Zotero to check whether this paper relates to one she read last week. <em>Vaguely remembers but isn't sure</em>.</p>
+        <p lang="vi">14h: ăn xong, mệt, định mở bài 3 nhưng quyết định scroll Twitter "5 phút". Đến 15h30 vẫn chưa quay lại.</p>
+        <p lang="en">2pm: post-lunch fatigue, plans to open paper 3 but decides to scroll Twitter "for 5 minutes". 3:30pm she still hasn't returned.</p>
+        <p lang="vi">Cuối tuần: viết bài tổng hợp. Mở 12 tab. Ctrl-F. Scroll. Copy paste. Hỏi ChatGPT để gom ý nhưng phải tự verify từng câu vì AI bịa. Nộp lúc 2h sáng Chủ nhật.</p>
+        <p lang="en">Weekend: writing the literature review. 12 tabs open. Ctrl-F. Scroll. Copy paste. Asks ChatGPT to summarize but has to verify every sentence because AI hallucinates. Submits at 2am Sunday.</p>
+        <p class="day-result day-result-bad" lang="vi">→ 8 giờ làm việc / bài. 60% thời gian = đọc lại.</p>
+        <p class="day-result day-result-bad" lang="en">→ 8 hours of work per paper. 60% of that time = re-reading.</p>
       </div>
       <div class="day-col day-after">
-        <div class="day-tag day-tag-blue">SAU</div>
-        <h3 class="serif-md">Sarah, vẫn 27, vẫn PhD năm 3</h3>
-        <p>Sáng thứ Hai, drop 8 PDF từ arXiv vào Memory Palace. Đi ăn sáng.</p>
-        <p>Quay lại lúc 10h30, app đã compile xong cả 8. Mở Obsidian, graph view hiển thị: 3 paper mới link với cluster <code>[[predictive-coding]]</code> cô đã đọc 6 tháng trước. Ngạc nhiên — cô <em>quên</em> mất kết nối này.</p>
-        <p>Hỏi qua chat: <em>"Trong 8 paper hôm nay, paper nào challenge giả định free energy principle?"</em> AI trả: 2 paper, kèm citation <code>[[paper-3#^thesis]]</code> click được mở thẳng đến luận điểm.</p>
-        <p>Cuối tuần: <code>report: free energy principle in vision (last 6 months)</code> → 5 trang draft Markdown từ 50+ paper trong vault. Cô review 1 giờ, sửa ngôn ngữ, nộp.</p>
-        <p class="day-result day-result-good">→ 1.5 giờ / paper. 80% thời gian = thinking + writing.</p>
+        <div class="day-tag day-tag-blue" lang="vi">SAU</div>
+        <div class="day-tag day-tag-blue" lang="en">AFTER</div>
+        <h3 class="serif-md" lang="vi">Sarah, vẫn 27, vẫn năm 2</h3>
+        <h3 class="serif-md" lang="en">Sarah, still 27, still in year 2</h3>
+        <p lang="vi">Sáng thứ Hai, kéo 8 file PDF vào Memory Palace. Đi ăn sáng.</p>
+        <p lang="en">Monday morning, drags 8 PDFs into Memory Palace. Goes for breakfast.</p>
+        <p lang="vi">10h30 quay lại, app đã đọc xong cả 8. Mở Obsidian, thấy biểu đồ liên kết: 3 bài mới <em>tự liên kết</em> với cụm bài cô đã đọc 6 tháng trước. Cô ngạc nhiên — <em>quên</em> mất các kết nối này.</p>
+        <p lang="en">10:30am she's back, app has finished all 8. Opens Obsidian, sees the link graph: 3 new papers <em>auto-linked</em> with a cluster she read 6 months ago. She's surprised — she'd <em>forgotten</em> these connections existed.</p>
+        <p lang="vi">Hỏi qua chat: <em>"Trong 8 bài hôm nay, bài nào phản bác giả định cũ?"</em> AI trả lời: 2 bài, kèm trích dẫn click được mở thẳng đến đoạn liên quan.</p>
+        <p lang="en">Asks via chat: <em>"Of today's 8 papers, which one challenges the old assumption?"</em> AI answers: 2 papers, with clickable citations that open straight to the relevant passage.</p>
+        <p lang="vi">Cuối tuần: gõ "tóm tắt: chủ đề X trong 6 tháng qua" → có bản nháp 5 trang từ 50+ bài trong kho. Cô review 1 giờ, sửa văn phong, nộp.</p>
+        <p lang="en">Weekend: types "summary: topic X over the last 6 months" → gets a 5-page draft pulled from 50+ papers. Reviews for an hour, polishes the prose, submits.</p>
+        <p class="day-result day-result-good" lang="vi">→ 1.5 giờ / bài. 80% thời gian = suy nghĩ + viết.</p>
+        <p class="day-result day-result-good" lang="en">→ 1.5 hours per paper. 80% of that time = thinking + writing.</p>
       </div>
     </div>
 
-    <p class="day-note">
-      Câu chuyện của Sarah là tổng hợp từ 4 PhD đầu tiên đã dùng. Khác biệt thật: thay vì <em>đọc lại</em>, họ <em>tra cứu lại</em> — cùng tốc độ với tra Wikipedia, nhưng nội dung là <em>của họ</em>.
+    <p class="day-note" lang="vi">
+      Câu chuyện Sarah là tổng hợp từ 4 nghiên cứu sinh đầu tiên đã dùng. Khác biệt thật: thay vì <em>đọc lại</em>, họ <em>tra cứu</em> — nhanh như tra Wikipedia, nhưng nội dung là <em>của họ</em>.
+    </p>
+    <p class="day-note" lang="en">
+      Sarah's story is composited from the first 4 graduate students who used the app. The real shift: instead of <em>re-reading</em>, they <em>look up</em> — as fast as a Wikipedia query, but the content is <em>theirs</em>.
     </p>
   </div>
 </section>
 
-<!-- FOR WHO — self-test paragraphs -->
+<!-- FOR WHO -->
 <section id="for-who" class="for-who">
   <div class="container">
-    <p class="section-kicker">Dành cho ai?</p>
-    <h2 class="serif">Đây là dành cho bạn nếu...</h2>
+    <p class="section-kicker" lang="vi">Dành cho ai?</p>
+    <p class="section-kicker" lang="en">Who's it for?</p>
+    <h2 class="serif" lang="vi">Đây là dành cho bạn nếu...</h2>
+    <h2 class="serif" lang="en">This is for you if...</h2>
 
     <div class="who-list">
       <div class="who-item">
         <div class="who-num">01</div>
         <div class="who-content">
-          <h3 class="serif-sm">...bạn đọc nhiều hơn 5 tài liệu dài/tuần và bắt đầu sợ Downloads folder.</h3>
-          <p>PhD students, researchers, analysts. Bạn không thiếu nguồn — bạn thiếu cách tiêu hoá nguồn. Memory Palace giúp 8-12 paper/tuần biến thành wiki có cross-link tự động, không cần bạn ngồi đánh tag.</p>
+          <h3 class="serif-sm" lang="vi">...bạn đọc nhiều hơn 5 tài liệu dài/tuần và bắt đầu sợ thư mục Downloads.</h3>
+          <h3 class="serif-sm" lang="en">...you read more than 5 long documents a week and you've started avoiding the Downloads folder.</h3>
+          <p lang="vi">Nghiên cứu sinh, học sinh năm cuối, người làm phân tích. Bạn không thiếu nguồn — bạn thiếu cách tiêu hoá nguồn. Memory Palace giúp 8-12 bài/tuần biến thành kho có liên kết chéo, không cần bạn ngồi đánh tag.</p>
+          <p lang="en">Grad students, final-year undergrads, analysts. You're not short of sources — you're short of a way to digest them. Memory Palace turns 8-12 papers a week into a cross-linked library without you sitting and tagging.</p>
         </div>
       </div>
 
       <div class="who-item">
         <div class="who-num">02</div>
         <div class="who-content">
-          <h3 class="serif-sm">...bạn làm consultant / freelance research, mỗi project là một silo riêng tư.</h3>
-          <p>Client trả $30K cho 1 đề bài. NDA cấm bạn upload data lên ChatGPT. Bạn cần workspace mỗi client một vault, chat được với toàn bộ tài liệu họ gửi, mà data không bao giờ rời máy bạn. Studio License $199 cho phép 5 máy.</p>
+          <h3 class="serif-sm" lang="vi">...bạn làm tư vấn / nghiên cứu thuê, mỗi project là một silo riêng tư.</h3>
+          <h3 class="serif-sm" lang="en">...you do consulting or contract research, and each project is its own private silo.</h3>
+          <p lang="vi">Khách hàng trả 30K-50K đô cho 1 đề bài. Hợp đồng cấm bạn upload tài liệu lên ChatGPT. Bạn cần một workspace riêng cho mỗi khách, hỏi đáp được toàn bộ tài liệu họ gửi, mà data không bao giờ rời máy bạn. Gói Studio $199 cho phép 5 máy.</p>
+          <p lang="en">Clients pay $30K-$50K for a brief. NDA forbids uploading their files to ChatGPT. You need a separate workspace per client, fully searchable, where data never leaves your machine. Studio plan $199 covers 5 machines.</p>
         </div>
       </div>
 
       <div class="who-item">
         <div class="who-num">03</div>
         <div class="who-content">
-          <h3 class="serif-sm">...bạn viết — newsletter, blog, sách — và khổ vì việc gom nguồn.</h3>
-          <p>Mỗi tuần bạn đọc 50 article để chắt lọc 1 newsletter. Bạn đã thử Readwise ($120/yr). Memory Palace replace chỗ đó: drop article qua tuần, cuối tuần "report:" tự ra outline với citation đầy đủ.</p>
+          <h3 class="serif-sm" lang="vi">...bạn viết — newsletter, blog, sách — và khổ vì việc gom nguồn.</h3>
+          <h3 class="serif-sm" lang="en">...you write — newsletter, blog, book — and source-gathering kills you.</h3>
+          <p lang="vi">Mỗi tuần bạn đọc 50 bài để chắt lọc 1 newsletter. Bạn đã thử Readwise ($120/năm). Memory Palace thay thế: kéo bài qua tuần, cuối tuần gõ "viết báo cáo: chủ đề X" → có dàn ý kèm trích dẫn đầy đủ.</p>
+          <p lang="en">You read 50 articles a week to distill one newsletter. You tried Readwise ($120/year). Memory Palace replaces it: drop articles all week, on Friday type "report: topic X" → get an outline with full citations.</p>
         </div>
       </div>
 
       <div class="who-item">
         <div class="who-num">04</div>
         <div class="who-content">
-          <h3 class="serif-sm">...bạn là solo founder/PM ra quyết định lớn nhưng quên hết những gì đã đọc.</h3>
-          <p>200 bài về pricing, churn, GTM. Mỗi lần phải quyết, bạn lại Google. Memory Palace là "mentor ảo" đã đọc tất cả những gì <em>bạn</em> đã đọc — bao gồm cả customer interview transcripts mà ChatGPT không bao giờ có.</p>
+          <h3 class="serif-sm" lang="vi">...bạn là founder / quản lý sản phẩm, ra quyết định lớn nhưng quên hết những gì đã đọc.</h3>
+          <h3 class="serif-sm" lang="en">...you're a founder or product manager making big calls but forgetting everything you've read.</h3>
+          <p lang="vi">200 bài về định giá, churn, marketing. Mỗi lần phải quyết, bạn lại Google. Memory Palace là "người cố vấn ảo" đã đọc tất cả những gì <em>bạn</em> đã đọc — gồm cả ghi chú phỏng vấn khách hàng mà ChatGPT không bao giờ thấy.</p>
+          <p lang="en">200 essays on pricing, churn, marketing. Every big decision sends you back to Google. Memory Palace is the "virtual mentor" that has read everything <em>you</em> have — including customer interview notes ChatGPT will never see.</p>
         </div>
       </div>
     </div>
 
-    <p class="who-anti">
-      <strong>Không dành cho bạn nếu:</strong> bạn casual reader (&lt;5 tài liệu/tháng), team &gt;5 người cần realtime collab (đây là single-user tool), hoặc không có/không muốn API key OpenAI/Anthropic.
+    <p class="who-anti" lang="vi">
+      <strong>Không dành cho bạn nếu:</strong> bạn đọc rất ít (&lt;5 tài liệu/tháng), team &gt;5 người cần làm việc chung realtime (đây là tool cho 1 người), hoặc không muốn đăng ký tài khoản OpenAI/Claude.
+    </p>
+    <p class="who-anti" lang="en">
+      <strong>Not for you if:</strong> you read very little (&lt;5 docs/month), you're a 5+ person team needing realtime collab (this is single-user), or you don't want to set up an OpenAI/Claude account.
     </p>
   </div>
 </section>
 
-<!-- WHY LOCAL — concrete privacy scenario -->
+<!-- LOCAL FIRST -->
 <section class="local">
   <div class="container local-grid">
     <div class="local-text">
-      <p class="section-kicker">Local-first không phải buzzword</p>
-      <h2 class="serif">Có khi nào bạn từ chối upload file lên ChatGPT?</h2>
-      <p>
-        Lawyer review bản án M&amp;A có tên thật khách hàng. Doctor đọc clinical guideline + bệnh án nội bộ. Founder phân tích deck đối thủ leak ra. Researcher process dataset có IRB approval cấm cloud.
+      <p class="section-kicker" lang="vi">Riêng tư không phải khẩu hiệu</p>
+      <p class="section-kicker" lang="en">Privacy isn't a slogan</p>
+      <h2 class="serif" lang="vi">Có khi nào bạn ngại upload file lên ChatGPT?</h2>
+      <h2 class="serif" lang="en">Ever hesitated to upload a file to ChatGPT?</h2>
+
+      <p lang="vi">
+        Luật sư xem bản án có tên thật khách hàng. Bác sĩ đọc hướng dẫn lâm sàng + bệnh án. Founder phân tích slide đối thủ leak ra. Nghiên cứu sinh xử lý dataset có quy định cấm cloud.
       </p>
-      <p>
-        Trong những trường hợp đó, ChatGPT, NotebookLM, Mem.ai — ngắt lửa. Memory Palace vẫn chạy, vì <strong>không có server nào</strong>. LLM call đi <em>thẳng</em> từ máy bạn → API provider bạn chọn (OpenAI, Anthropic, DeepSeek). Chúng tôi không thấy data của bạn — không bao giờ.
+      <p lang="en">
+        A lawyer reviewing a case with real client names. A doctor reading clinical guidelines + patient charts. A founder analyzing leaked competitor decks. A researcher processing a dataset with strict no-cloud rules.
       </p>
-      <p>
-        Wiki output là Markdown thuần trong thư mục bạn chọn. Mở bằng Obsidian, sync qua iCloud nếu muốn, export ZIP bất cứ lúc nào, migrate sang công cụ khác — không lock-in. <em>Đây là giả định cốt lõi của sản phẩm</em>, không phải feature có thể bị remove ở bản sau.
+      <p lang="vi">
+        Trong những tình huống đó, ChatGPT, NotebookLM, Mem.ai — ngắt. Memory Palace vẫn chạy, vì <strong>không có server nào ở giữa</strong>. Khi gọi AI, máy bạn nói chuyện thẳng với OpenAI/Claude bằng tài khoản của bạn. Chúng tôi không nhìn thấy nội dung — không bao giờ.
+      </p>
+      <p lang="en">
+        In those situations, ChatGPT, NotebookLM, Mem.ai — out. Memory Palace still runs because <strong>there's no server in the middle</strong>. When the AI is called, your machine talks directly to OpenAI/Claude under your account. We never see your content.
+      </p>
+      <p lang="vi">
+        File ghi chú đầu ra là Markdown trên thư mục bạn chọn. Mở bằng Obsidian (app ghi chú phổ biến và miễn phí), sync qua iCloud nếu muốn, xuất ZIP bất cứ lúc nào — không khoá. Đây là <em>nguyên tắc cốt lõi</em>, không phải tính năng có thể bị xoá ở bản sau.
+      </p>
+      <p lang="en">
+        Output notes are Markdown in a folder you choose. Open with Obsidian (a popular free note app), sync via iCloud if you want, ZIP-export anytime — no lock-in. This is a <em>core principle</em>, not a feature that could disappear in a future release.
       </p>
     </div>
     <div class="local-table">
-      <h3 class="serif-sm">So với competitor</h3>
+      <h3 class="serif-sm" lang="vi">So với các app khác</h3>
+      <h3 class="serif-sm" lang="en">vs the alternatives</h3>
       <table class="compare">
         <thead>
           <tr><th></th><th>MP</th><th>NotebookLM</th><th>Mem</th></tr>
         </thead>
         <tbody>
-          <tr><td>Local-first</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
-          <tr><td>Obsidian-native</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
-          <tr><td>Mua một lần</td><td class="cell-yes">$49</td><td>free*</td><td>$10/mo</td></tr>
-          <tr><td>Multi-vault NDA</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
-          <tr><td>Export Markdown</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
-          <tr><td>Custom prompt</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
+          <tr><td lang="vi">Trên máy bạn</td><td lang="en">On your machine</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
+          <tr><td lang="vi">Mở bằng Obsidian</td><td lang="en">Opens in Obsidian</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
+          <tr><td lang="vi">Mua một lần</td><td lang="en">Pay once</td><td class="cell-yes">$39</td><td lang="vi">free*</td><td lang="en">free*</td><td>$10/tháng</td></tr>
+          <tr><td lang="vi">Nhiều kho riêng (NDA)</td><td lang="en">Multi-vault (NDA)</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
+          <tr><td lang="vi">Xuất Markdown</td><td lang="en">Markdown export</td><td class="cell-yes">✓</td><td>×</td><td>×</td></tr>
         </tbody>
       </table>
-      <p class="compare-note">* NotebookLM = Google subsidize, data lên cloud Google.</p>
+      <p class="compare-note" lang="vi">* NotebookLM "free" = Google trợ giá, dữ liệu của bạn lên cloud Google.</p>
+      <p class="compare-note" lang="en">* NotebookLM "free" = Google subsidized, your data lives in Google cloud.</p>
     </div>
   </div>
 </section>
 
-<!-- PRICING — minimalist, honest -->
+<!-- PRICING -->
 <section id="pricing" class="pricing">
   <div class="container">
-    <p class="section-kicker">Giá</p>
-    <h2 class="serif">Mua một lần. Dùng vĩnh viễn.<br>Không subscription.</h2>
-    <p class="pricing-lead">
-      Bạn đã trả OpenAI/Anthropic cho LLM rồi. Tôi không muốn xếp thêm tầng phí lên đó. Mua một lần, có quyền dùng phiên bản 1.x mãi mãi.
+    <p class="section-kicker" lang="vi">Giá</p>
+    <p class="section-kicker" lang="en">Pricing</p>
+    <h2 class="serif" lang="vi">Mua một lần. Dùng vĩnh viễn.<br>Không phí hàng tháng.</h2>
+    <h2 class="serif" lang="en">Pay once. Use forever.<br>No subscription.</h2>
+    <p class="pricing-lead" lang="vi">
+      Bạn đã trả OpenAI/Claude cho phần AI rồi. Tôi không muốn xếp thêm tầng phí lên đó. Một lần, là xong.
+    </p>
+    <p class="pricing-lead" lang="en">
+      You're already paying OpenAI/Claude for the AI side. I don't want to stack another fee on top. Once, done.
     </p>
 
     <div class="price-grid">
       <article class="price-card">
-        <h3 class="price-name">Trial</h3>
+        <h3 class="price-name" lang="vi">Dùng thử</h3>
+        <h3 class="price-name" lang="en">Trial</h3>
         <div class="price-amount"><span class="amount-num">$0</span></div>
-        <p class="price-period">14 ngày · full features</p>
+        <p class="price-period" lang="vi">14 ngày · đầy đủ tính năng</p>
+        <p class="price-period" lang="en">14 days · full features</p>
         <ul class="price-feat">
-          <li>Tất cả tính năng</li>
-          <li>Vault không giới hạn</li>
-          <li>Không cần thẻ tín dụng</li>
-          <li class="muted">— Tự cấu hình API key</li>
+          <li lang="vi">Tất cả tính năng</li>
+          <li lang="en">All features</li>
+          <li lang="vi">Số lượng kho không giới hạn</li>
+          <li lang="en">Unlimited vaults</li>
+          <li lang="vi">Không cần thẻ tín dụng</li>
+          <li lang="en">No credit card</li>
+          <li class="muted" lang="vi">— Cần tài khoản OpenAI/Claude</li>
+          <li class="muted" lang="en">— OpenAI/Claude account needed</li>
         </ul>
-        <a href="#buy" class="btn btn-outline btn-block">Tải về dùng thử</a>
+        <a href="#buy" class="btn btn-outline btn-block" lang="vi">Tải về dùng thử</a>
+        <a href="#buy" class="btn btn-outline btn-block" lang="en">Download trial</a>
       </article>
 
       <article class="price-card price-featured">
-        <div class="price-flag">Phù hợp đa số</div>
-        <h3 class="price-name">Lifetime Personal</h3>
+        <div class="price-flag" lang="vi">Phù hợp đa số</div>
+        <div class="price-flag" lang="en">Most popular</div>
+        <h3 class="price-name" lang="vi">Cá nhân vĩnh viễn</h3>
+        <h3 class="price-name" lang="en">Lifetime Personal</h3>
         <div class="price-amount">
           <span class="amount-num">$39</span>
           <span class="amount-strike">$49</span>
         </div>
-        <p class="price-period">Early bird · 100 user đầu · 1 máy</p>
+        <p class="price-period" lang="vi">Sớm · 100 user đầu · 1 máy</p>
+        <p class="price-period" lang="en">Early bird · first 100 users · 1 machine</p>
         <ul class="price-feat">
-          <li>Dùng vĩnh viễn</li>
-          <li>Mọi update v1.x miễn phí</li>
-          <li>Refund 14 ngày, không hỏi lý do</li>
-          <li>Discord cộng đồng + email support</li>
+          <li lang="vi">Dùng vĩnh viễn</li>
+          <li lang="en">Forever use</li>
+          <li lang="vi">Mọi cập nhật v1.x miễn phí</li>
+          <li lang="en">All v1.x updates free</li>
+          <li lang="vi">Hoàn tiền 14 ngày, không cần lý do</li>
+          <li lang="en">14-day refund, no questions</li>
+          <li lang="vi">Cộng đồng Discord + email</li>
+          <li lang="en">Discord + email support</li>
         </ul>
-        <a href="#buy" class="btn btn-primary btn-block">Mua $39</a>
+        <a href="#buy" class="btn btn-primary btn-block" lang="vi">Mua $39</a>
+        <a href="#buy" class="btn btn-primary btn-block" lang="en">Buy $39</a>
       </article>
 
       <article class="price-card">
-        <h3 class="price-name">Studio</h3>
+        <h3 class="price-name" lang="vi">Studio</h3>
+        <h3 class="price-name" lang="en">Studio</h3>
         <div class="price-amount"><span class="amount-num">$199</span></div>
-        <p class="price-period">5 máy · cho consultant + studio nhỏ</p>
+        <p class="price-period" lang="vi">5 máy · cho freelancer + studio nhỏ</p>
+        <p class="price-period" lang="en">5 machines · freelancer + small studio</p>
         <ul class="price-feat">
-          <li>Mọi tính năng Lifetime</li>
-          <li>5 active machines</li>
-          <li>Email support ưu tiên</li>
-          <li>Phù hợp 1 vault / client (NDA)</li>
+          <li lang="vi">Mọi tính năng Lifetime</li>
+          <li lang="en">All Lifetime features</li>
+          <li lang="vi">5 máy đồng thời</li>
+          <li lang="en">5 active machines</li>
+          <li lang="vi">Email hỗ trợ ưu tiên</li>
+          <li lang="en">Priority email support</li>
+          <li lang="vi">1 kho / khách hàng (NDA)</li>
+          <li lang="en">1 vault per client (NDA)</li>
         </ul>
-        <a href="#buy" class="btn btn-outline btn-block">Mua $199</a>
+        <a href="#buy" class="btn btn-outline btn-block" lang="vi">Mua $199</a>
+        <a href="#buy" class="btn btn-outline btn-block" lang="en">Buy $199</a>
       </article>
     </div>
   </div>
 </section>
 
-<!-- HONEST FAQ — the awkward questions -->
+<!-- FAQ -->
 <section id="faq" class="faq">
   <div class="container">
-    <p class="section-kicker">Câu hỏi thẳng thắn</p>
-    <h2 class="serif">Những câu bạn ngại hỏi.<br>Tôi trả lời thẳng.</h2>
+    <p class="section-kicker" lang="vi">Câu hỏi thẳng thắn</p>
+    <p class="section-kicker" lang="en">Honest FAQ</p>
+    <h2 class="serif" lang="vi">Những câu bạn ngại hỏi.<br>Tôi trả lời thẳng.</h2>
+    <h2 class="serif" lang="en">The awkward questions.<br>Direct answers.</h2>
 
     <details class="faq-q" open>
-      <summary>"Tôi không biết bạn là ai. Sao tôi tin được?"</summary>
-      <div class="faq-a">
-        <p>Hợp lý. Tôi là Acy Doan, một solo dev ở Việt Nam. Memory Palace là sản phẩm thứ ba tôi build solo — hai sản phẩm trước thất bại, sản phẩm này đã chạy 6 tháng và tôi đang dùng cho công việc đọc của chính mình.</p>
-        <p>Bằng chứng tôi có thể đưa: code public sau soft-launch trên GitHub (private giai đoạn đầu vì lý do business, không phải vì giấu gì). License key sign offline với Ed25519 — bạn có thể xác minh chữ ký trên máy mình. App không phone-home telemetry.</p>
-        <p>Nếu vẫn không tin → dùng trial 14 ngày trước. Không sao.</p>
+      <summary lang="vi">"Tôi không biết bạn là ai. Sao tôi tin được?"</summary>
+      <summary lang="en">"I don't know you. Why should I trust this?"</summary>
+      <div class="faq-a" lang="vi">
+        <p>Hợp lý. Tôi là Acy Doan, một solo developer ở Việt Nam. Memory Palace là sản phẩm thứ ba tôi làm một mình — hai sản phẩm trước thất bại, sản phẩm này đã chạy 6 tháng và tôi đang dùng cho công việc đọc của chính mình.</p>
+        <p>Bằng chứng tôi có thể đưa: mã nguồn sẽ public sau khi launch chính thức trên GitHub. Khoá kích hoạt được ký bằng cách thức an toàn (Ed25519) — bạn có thể xác minh trên máy bạn. App không ngầm gửi dữ liệu đi đâu (no telemetry).</p>
+        <p>Nếu vẫn không tin → dùng bản dùng thử 14 ngày trước. Không vấn đề gì.</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>Fair. I'm Acy Doan, a solo developer in Vietnam. Memory Palace is my third solo product — two earlier ones failed, this one's been running six months and I use it for my own reading.</p>
+        <p>Evidence I can offer: source code will go public on GitHub after the official launch. License keys are signed with a secure scheme (Ed25519) — verifiable on your machine. The app sends no telemetry.</p>
+        <p>Still skeptical? Take the 14-day trial first. No problem.</p>
       </div>
     </details>
 
     <details class="faq-q">
-      <summary>"Nếu 6 tháng nữa bạn bỏ dự án thì sao?"</summary>
-      <div class="faq-a">
-        <p>Đây là rủi ro thật của mọi solo product. Cách tôi mitigate cho bạn: <strong>vault của bạn là Markdown thuần</strong>. Memory Palace chết, vault vẫn mở được bằng Obsidian, VSCode, mọi text editor. Bạn không mất data, chỉ mất công cụ compile.</p>
-        <p>Code sẽ public dưới license cho phép tự host nếu tôi pause/sunset (kế hoạch ghi rõ trong roadmap GitHub khi public). Worst case, một dev khác fork và tiếp tục.</p>
-        <p>Đây là một lý do tôi chọn local-first — không phụ thuộc cloud của tôi nghĩa là không phụ thuộc tôi tồn tại.</p>
+      <summary lang="vi">"Nếu 6 tháng nữa bạn bỏ dự án thì sao?"</summary>
+      <summary lang="en">"What if you abandon this in 6 months?"</summary>
+      <div class="faq-a" lang="vi">
+        <p>Đây là rủi ro thật của mọi sản phẩm 1 người làm. Cách tôi giảm rủi ro cho bạn: <strong>kho ghi chú của bạn là file Markdown thường</strong>. Memory Palace ngừng tồn tại, kho vẫn mở được bằng Obsidian, VSCode, mọi text editor. Bạn không mất dữ liệu, chỉ mất công cụ đọc-thay.</p>
+        <p>Mã nguồn sẽ public dưới giấy phép cho phép tự cài đặt nếu tôi pause/sunset (lộ trình ghi rõ trong README công khai). Worst case, một dev khác fork và tiếp tục.</p>
+        <p>Đây là một lý do tôi chọn local-first — không phụ thuộc cloud của tôi nghĩa là không phụ thuộc vào việc tôi tồn tại hay không.</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>Real risk for any solo product. How I de-risk it for you: <strong>your vault is plain Markdown files</strong>. Memory Palace dies, the vault still opens in Obsidian, VSCode, any text editor. You don't lose data, you lose the read-for-me tool.</p>
+        <p>Source will go public under a self-hosting-permissible license if I pause/sunset (clearly stated in the public README). Worst case, another dev forks and continues.</p>
+        <p>This is one reason I picked local-first — not depending on my cloud means not depending on me being around.</p>
       </div>
     </details>
 
     <details class="faq-q">
-      <summary>"Tại sao trả $49 cho cái mà tôi tự build với ChatGPT API được?"</summary>
-      <div class="faq-a">
-        <p>Đúng rồi, bạn build được. Tôi cũng nghĩ thế khi bắt đầu — và sau 8 tháng tôi vẫn đang fix các edge case. Có 30+ thứ phía sau cái UI đơn giản: PDF parser fallback, YouTube transcript khi không có CC, atomic write tránh corrupt khi Obsidian sync, OCR cho scan, license offline verify, multi-vault, watcher daemon, error type classification...</p>
-        <p>Nếu thời gian của bạn rẻ hơn $49 và bạn enjoy debug edge case, bạn nên tự build (tôi nghiêm túc — sẽ học được nhiều). Nếu không, $49 đổi 30+ giờ work của tôi là phép tính dễ.</p>
+      <summary lang="vi">"Tại sao trả $39 cho cái mà tôi tự build với ChatGPT API được?"</summary>
+      <summary lang="en">"Why pay $39 for something I could build with the ChatGPT API?"</summary>
+      <div class="faq-a" lang="vi">
+        <p>Đúng rồi, bạn build được. Tôi cũng nghĩ thế khi bắt đầu — và sau 8 tháng tôi vẫn đang fix các trường hợp đặc biệt. Có 30+ thứ phía sau giao diện đơn giản: đọc PDF khi không có chữ (cần OCR), lấy phụ đề YouTube khi video không bật, ghi file an toàn khi đồng bộ Obsidian, kiểm tra giấy phép offline, nhiều kho riêng, theo dõi thư mục, phân loại lỗi LLM...</p>
+        <p>Nếu thời gian của bạn rẻ hơn $39 và bạn enjoy debug edge case, bạn nên tự build (tôi nghiêm túc — sẽ học được nhiều). Nếu không, $39 đổi 30+ giờ làm của tôi là phép tính dễ.</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>True, you could. I thought the same when I started — eight months later I'm still fixing edge cases. 30+ things hide behind the simple UI: PDFs without text layer (needs OCR), YouTube subs when captions are off, safe writes during Obsidian sync, offline license checks, multi-vault, folder watcher, LLM error classification...</p>
+        <p>If your time is worth less than $39 and you enjoy debugging edge cases, build it yourself (seriously — you'll learn a lot). If not, $39 for 30+ hours of my work is easy math.</p>
       </div>
     </details>
 
     <details class="faq-q">
-      <summary>"App chưa có chứng chỉ Microsoft, Windows cảnh báo lúc cài. Đây có phải scam?"</summary>
-      <div class="faq-a">
-        <p>Không, đây là hành vi mặc định của Windows SmartScreen với <em>mọi</em> phần mềm chưa được code-sign. Để có chứng chỉ chính thức, tôi cần trả Sectigo $200/năm. Tôi defer việc này đến khi đạt 50 user trả tiền — không muốn fixed cost trước khi có revenue.</p>
-        <p>Workaround an toàn: click <strong>"More info" → "Run anyway"</strong>. Bạn có thể xác minh integrity bằng SHA256 hash tôi publish ở mỗi release. Sẽ có chứng chỉ ở v1.1 (dự kiến tháng tới).</p>
+      <summary lang="vi">"App chưa có chứng chỉ Microsoft, Windows cảnh báo lúc cài. Có phải lừa đảo?"</summary>
+      <summary lang="en">"No Microsoft certificate, Windows warns me on install. Scam?"</summary>
+      <div class="faq-a" lang="vi">
+        <p>Không, đây là cảnh báo mặc định của Windows với <em>mọi</em> phần mềm chưa mua chứng chỉ. Để có chứng chỉ chính thức, tôi cần trả $200/năm. Tôi defer việc này đến khi đạt 50 user trả tiền — không muốn fixed cost trước khi có doanh thu.</p>
+        <p>Cách bypass an toàn: click <strong>"More info" → "Run anyway"</strong>. Bạn có thể kiểm tra mã hash file tôi công bố ở mỗi bản phát hành. Sẽ có chứng chỉ ở v1.1 (kế hoạch tháng sau).</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>No, this is Windows' default warning for <em>any</em> software without a code-signing cert. The cert costs $200/year. I'm deferring it until 50 paying users — no fixed cost before revenue.</p>
+        <p>Safe bypass: click <strong>"More info" → "Run anyway"</strong>. You can verify the file hash I publish with each release. The cert will land in v1.1 (next month's plan).</p>
       </div>
     </details>
 
     <details class="faq-q">
-      <summary>"BYOK (tự mua API key) là deal-breaker với tôi."</summary>
-      <div class="faq-a">
-        <p>Hiểu. Bản v1.1 (cuối tháng này) sẽ có <strong>Trial Credits</strong>: tôi host proxy gateway, bạn dùng 14 ngày miễn phí KHÔNG cần API key của bạn. Sau đó hoặc paste key OpenAI/Anthropic của bạn, hoặc subscribe optional gateway $5-9/mo.</p>
-        <p>Nếu cần ngay bây giờ và không muốn setup OpenAI: ping @chunin1103 trên Telegram, tôi cấp tay 1 tuần test credits cho bạn.</p>
+      <summary lang="vi">"Phải tự đăng ký OpenAI / Claude là một deal-breaker với tôi."</summary>
+      <summary lang="en">"Setting up my own OpenAI/Claude account is a deal-breaker."</summary>
+      <div class="faq-a" lang="vi">
+        <p>Hiểu. Bản v1.1 (cuối tháng này) sẽ có <strong>Trial Credits</strong>: tôi host gateway, bạn dùng 14 ngày miễn phí KHÔNG cần tài khoản OpenAI/Claude. Sau đó hoặc paste tài khoản của bạn vào, hoặc đăng ký gateway $5-9/tháng.</p>
+        <p>Nếu cần ngay và không muốn setup OpenAI: ping <a href="https://t.me/chunin1103">@chunin1103</a> trên Telegram, tôi cấp tay 1 tuần test cho bạn.</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>Understood. v1.1 (end of this month) ships <strong>Trial Credits</strong>: I host a gateway, you get 14 days free with NO OpenAI/Claude account. After that, plug in your own or subscribe to my gateway at $5-9/month.</p>
+        <p>Need it now and don't want to set up OpenAI? Ping <a href="https://t.me/chunin1103">@chunin1103</a> on Telegram, I'll grant you a week of test access manually.</p>
       </div>
     </details>
 
     <details class="faq-q">
-      <summary>"macOS / Linux / mobile?"</summary>
-      <div class="faq-a">
-        <p>Hiện tại Windows 10/11 only. macOS port: Q3 2026 (cần test trên hardware Mac, đang đặt). Linux: cộng đồng có thể fork sau khi public — tôi không có resource maintain 3 platform solo.</p>
-        <p>Mobile (iOS/Android): không khả thi với architecture hiện tại (Python sidecar). Đang nghiên cứu PWA mode để đọc/chat trên mobile, compile vẫn cần desktop.</p>
+      <summary lang="vi">"Mac / Linux / điện thoại?"</summary>
+      <summary lang="en">"Mac / Linux / mobile?"</summary>
+      <div class="faq-a" lang="vi">
+        <p>Hiện tại Windows 10/11 only. macOS port: Q3 2026 (cần test trên máy Mac, đang đặt). Linux: cộng đồng có thể fork sau khi public.</p>
+        <p>Mobile (iOS/Android): kiến trúc hiện tại không khả thi. Đang nghiên cứu chế độ mobile-đọc (compile vẫn cần desktop).</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>Currently Windows 10/11 only. macOS port: Q3 2026 (need a Mac to test, ordering one). Linux: community fork after open-source.</p>
+        <p>Mobile (iOS/Android): current architecture doesn't allow it. Researching a mobile-read mode (processing still needs desktop).</p>
       </div>
     </details>
 
     <details class="faq-q">
-      <summary>"Refund thật sự được không?"</summary>
-      <div class="faq-a">
-        <p>14 ngày, không hỏi lý do. Email <code>hello@memorypalace.app</code> với order ID. Tiền về 3-5 ngày. Tôi không argue, không gửi survey "tại sao bạn rời", không gài tâm lý. Refund là quyền của bạn.</p>
+      <summary lang="vi">"Hoàn tiền thật được không?"</summary>
+      <summary lang="en">"Refund actually works?"</summary>
+      <div class="faq-a" lang="vi">
+        <p>14 ngày, không cần lý do. Email <code>hello@memorypalace.app</code> với mã đơn. Tiền về 3-5 ngày. Tôi không tranh luận, không gửi survey "tại sao bạn rời", không gài tâm lý. Refund là quyền của bạn.</p>
+      </div>
+      <div class="faq-a" lang="en">
+        <p>14 days, no reason needed. Email <code>hello@memorypalace.app</code> with order ID. Money back in 3-5 days. I don't argue, don't send "why are you leaving" surveys, don't guilt-trip. Refund is your right.</p>
       </div>
     </details>
 
-    <p class="faq-more">Còn câu hỏi? <a href="mailto:hello@memorypalace.app">Email tôi</a> hoặc DM <a href="https://t.me/chunin1103">@chunin1103</a> trên Telegram.</p>
+    <p class="faq-more" lang="vi">Còn câu hỏi? <a href="mailto:hello@memorypalace.app">Email tôi</a> hoặc DM <a href="https://t.me/chunin1103">@chunin1103</a> trên Telegram.</p>
+    <p class="faq-more" lang="en">More questions? <a href="mailto:hello@memorypalace.app">Email me</a> or DM <a href="https://t.me/chunin1103">@chunin1103</a> on Telegram.</p>
   </div>
 </section>
 
-<!-- BUY CTA -->
+<!-- BUY -->
 <section id="buy" class="buy">
   <div class="container">
-    <p class="section-kicker buy-kicker">Còn bạn thì sao?</p>
-    <h2 class="serif">Tuần sau bạn sẽ đọc thêm 50 article nữa.<br>Bao nhiêu cái sẽ thật sự ở lại?</h2>
+    <p class="section-kicker buy-kicker" lang="vi">Còn bạn thì sao?</p>
+    <p class="section-kicker buy-kicker" lang="en">And you?</p>
+    <h2 class="serif" lang="vi">Tuần sau bạn sẽ đọc thêm 50 bài.<br>Bao nhiêu cái sẽ thật sự ở lại?</h2>
+    <h2 class="serif" lang="en">Next week you'll read 50 more articles.<br>How many will actually stick?</h2>
     <div class="buy-cta-row">
-      <a href="#" class="btn btn-primary btn-lg" id="cta-buy">Mua Lifetime · $39</a>
-      <a href="#" class="btn btn-outline btn-lg" id="cta-trial">Trial 14 ngày miễn phí</a>
+      <a href="#" class="btn btn-primary btn-lg" id="cta-buy" lang="vi">Mua một lần · $39</a>
+      <a href="#" class="btn btn-primary btn-lg" lang="en">Buy once · $39</a>
+      <a href="#" class="btn btn-outline btn-lg" id="cta-trial" lang="vi">Dùng thử 14 ngày miễn phí</a>
+      <a href="#" class="btn btn-outline btn-lg" lang="en">Free 14-day trial</a>
     </div>
-    <p class="buy-note">
-      Hỗ trợ thanh toán quốc tế (Visa, MC, PayPal) qua LemonSqueezy.<br>
-      Cần chuyển khoản VN (PayOS / VietQR / bank): ping <a href="https://t.me/chunin1103">@chunin1103</a> trên Telegram.
+    <p class="buy-note" lang="vi">
+      Hỗ trợ thanh toán quốc tế (Visa, MC, PayPal).<br>
+      Cần chuyển khoản VN (VietQR / bank): ping <a href="https://t.me/chunin1103">@chunin1103</a> trên Telegram.
+    </p>
+    <p class="buy-note" lang="en">
+      International cards (Visa, MC, PayPal) supported.<br>
+      Vietnam bank transfer / VietQR: ping <a href="https://t.me/chunin1103">@chunin1103</a> on Telegram.
     </p>
   </div>
 </section>
@@ -489,23 +675,26 @@
   <div class="container footer-grid">
     <div>
       <div class="brand">
-        <span class="brand-mark">M<span class="brand-dot">·</span>P</span>
+        <img src="/favicon.png" alt="" width="24" height="24" style="border-radius:5px; display:block;">
         <span class="brand-name">Memory Palace</span>
       </div>
-      <p class="footer-tag">Bộ não thứ hai cho người đọc nghiêm túc. Local. Yours. $39.</p>
+      <p class="footer-tag" lang="vi">Bộ não thứ hai cho người đọc nhiều. Trên máy bạn. $39.</p>
+      <p class="footer-tag" lang="en">Second brain for serious readers. On your machine. $39.</p>
     </div>
     <div>
-      <h4>Sản phẩm</h4>
+      <h4 lang="vi">Sản phẩm</h4>
+      <h4 lang="en">Product</h4>
       <ul>
-        <li><a href="#story">Câu chuyện</a></li>
-        <li><a href="#what">Sản phẩm</a></li>
-        <li><a href="#for-who">Dành cho ai</a></li>
-        <li><a href="#pricing">Giá</a></li>
-        <li><a href="/personas.html">Personas chi tiết</a></li>
+        <li><a href="#story" lang="vi">Câu chuyện</a><a href="#story" lang="en">Story</a></li>
+        <li><a href="#what" lang="vi">Sản phẩm</a><a href="#what" lang="en">Product</a></li>
+        <li><a href="#for-who" lang="vi">Dành cho ai</a><a href="#for-who" lang="en">Who's it for</a></li>
+        <li><a href="#pricing" lang="vi">Giá</a><a href="#pricing" lang="en">Pricing</a></li>
+        <li><a href="/personas.html" lang="vi">Persona chi tiết</a><a href="/personas.html" lang="en">Personas (deep dive)</a></li>
       </ul>
     </div>
     <div>
-      <h4>Liên hệ</h4>
+      <h4 lang="vi">Liên hệ</h4>
+      <h4 lang="en">Contact</h4>
       <ul>
         <li><a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a></li>
         <li><a href="https://t.me/chunin1103">Telegram @chunin1103</a></li>
@@ -513,18 +702,41 @@
       </ul>
     </div>
     <div>
-      <h4>Pháp lý</h4>
+      <h4 lang="vi">Pháp lý</h4>
+      <h4 lang="en">Legal</h4>
       <ul>
-        <li><a href="/privacy.html">Privacy (sắp có)</a></li>
-        <li><a href="/terms.html">Terms (sắp có)</a></li>
-        <li><a href="/refund.html">Refund policy</a></li>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+        <li><a href="/refund.html" lang="vi">Hoàn tiền</a><a href="/refund.html" lang="en">Refund</a></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© 2026 Memory Palace · Built solo bởi <a href="https://t.me/chunin1103">Acy Doan</a> tại Việt Nam · v1.0.4</p>
+    <p lang="vi">© 2026 Memory Palace · Một mình bởi <a href="https://t.me/chunin1103">Acy Doan</a> tại Việt Nam · v1.0.6</p>
+    <p lang="en">© 2026 Memory Palace · Built solo by <a href="https://t.me/chunin1103">Acy Doan</a> in Vietnam · v1.0.6</p>
   </div>
 </footer>
+
+<script>
+// Language toggle — persists in localStorage
+(function() {
+  const html = document.documentElement;
+  const stored = localStorage.getItem('mp_lang');
+  const initial = stored || (navigator.language?.startsWith('vi') ? 'vi' : (stored ? stored : 'vi'));
+  html.lang = initial;
+  function update() {
+    const cur = html.lang;
+    document.querySelectorAll('.vi-lbl').forEach(e => e.classList.toggle('active', cur === 'vi'));
+    document.querySelectorAll('.en-lbl').forEach(e => e.classList.toggle('active', cur === 'en'));
+  }
+  document.getElementById('lang-toggle').addEventListener('click', () => {
+    html.lang = html.lang === 'vi' ? 'en' : 'vi';
+    localStorage.setItem('mp_lang', html.lang);
+    update();
+  });
+  update();
+})();
+</script>
 
 </body>
 </html>
