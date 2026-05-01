@@ -2,11 +2,7 @@
   "name": "memory-palace-landing",
   "version": "1.0.0",
   "private": true,
-  "description": "Static landing page for Memory Palace — local-first AI second brain",
-  "scripts": {
-    "dev": "python -m http.server 5500",
-    "deploy": "vercel --prod"
-  },
-  "keywords": ["landing", "static", "memory-palace"],
-  "author": "Acy Doan"
+  "description": "Static landing page for Memory Palace — local-first AI second brain. Pure HTML/CSS, no build step.",
+  "author": "Acy Doan <taminhquan182@gmail.com>",
+  "homepage": "https://github.com/AlexT182/memory-palace-landing"
 }
