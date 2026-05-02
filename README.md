@@ -93,4 +93,4 @@ Sync manually when content changes (this repo is intentionally simpler than a co
 
 ## License
 
-(c) 2026 Acy Doan. Landing copy and design — all rights reserved. Brand "Memory Palace" is a trademark.
+(c) 2026 Sunny Ngô & Alex Tạ. Landing copy and design — all rights reserved. Brand "Memory Palace" is a trademark.
