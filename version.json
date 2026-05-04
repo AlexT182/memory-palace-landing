@@ -1,0 +1,9 @@
+{
+  "_comment": "Public version manifest for Memory Palace desktop app. The app polls this every 4h. Update 'latest' + 'release_url' + 'published_at' when shipping a new build.",
+  "latest": "1.0.15",
+  "release_name": "Memory Palace 1.0.15",
+  "release_url": "https://memory-palace-landing.vercel.app/",
+  "published_at": "2026-05-04",
+  "min_supported": "1.0.0",
+  "channel": "stable"
+}
