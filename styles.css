@@ -157,8 +157,8 @@ code {
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
 .btn:active { transform: translateY(0); }
 
-.btn-primary { background: var(--text); color: var(--bg); border-color: var(--text); }
-.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary { background: var(--text); color: var(--bg-navy); border-color: var(--text); font-weight: 600; }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: var(--shadow-glow); }
 
 .btn-outline { background: transparent; color: var(--text); border-color: var(--rule); }
 .btn-outline:hover { background: var(--text); color: var(--bg); }
@@ -1114,11 +1114,11 @@ section .container > h2 + p { margin-top: 16px; }
   margin-bottom: 32px;
 }
 .buy .btn-primary {
-  background: var(--bg-cream);
+  background: var(--text);
   color: var(--bg-navy);
-  border-color: var(--bg-cream);
+  border-color: var(--text);
 }
-.buy .btn-primary:hover { background: #fff; }
+.buy .btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
 .buy .btn-outline {
   color: var(--text-on-navy);
   border-color: rgba(245, 241, 232, 0.4);
