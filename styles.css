@@ -663,28 +663,28 @@ section .container > h2 + p { margin-top: 16px; }
 /* ─── INTERLUDE — single brutal observation ─── */
 
 .interlude {
-  background: var(--bg-navy);
+  background: radial-gradient(circle at center, #0a0a0b 0%, #050505 100%);
   color: var(--text-on-navy);
-  padding: 80px 28px;
-  border-top: none;
+  padding: 100px 28px;
+  border-top: 1px solid var(--rule-thin);
+  border-bottom: 1px solid var(--rule-thin);
 }
 .interlude-inner {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   font-family: var(--serif);
-  font-size: clamp(22px, 2.6vw, 30px);
-  line-height: 1.4;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.35;
   font-weight: 400;
 }
-.interlude-inner p { color: var(--text-on-navy); margin-bottom: 24px; }
-.interlude-inner em { color: #ffe9a8; font-style: italic; }
+.interlude-inner p { color: var(--text-on-navy); margin-bottom: 20px; }
+.interlude-inner em { color: var(--accent); font-style: italic; }
 .interlude-stab {
   font-weight: 600;
   font-style: italic;
-  border-left: 3px solid #ffe9a8;
+  border-left: 3px solid var(--accent);
   padding-left: 24px;
 }
-
 /* ─── STORY ─── */
 
 .story-inner { max-width: 760px; }
@@ -1150,4 +1150,14 @@ section .container > h2 + p { margin-top: 16px; }
 .footer-bottom a { color: var(--text-2); }
 
 
+
+
+/* --- Animations --- */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.story-prose p:nth-child(1) { animation-delay: 0.1s; }
+.story-prose p:nth-child(2) { animation-delay: 0.2s; }
+.story-prose p:nth-child(3) { animation-delay: 0.3s; }
+.story-prose p:nth-child(4) { animation-delay: 0.4s; }
+.story-prose p:nth-child(5) { animation-delay: 0.5s; }
+.story-prose p:nth-child(6) { animation-delay: 0.6s; }
 
