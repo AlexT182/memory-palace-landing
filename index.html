@@ -65,11 +65,11 @@ html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !import
     <div class="hero-text">
       <p class="hero-eyebrow">v1.0.12 · Windows · Riêng tư · Mua một lần</p>
 
-      <h1 class="hero-h1" lang="vi">
+      <h1 class="hero-h1 gradient-text" lang="vi">
         Bạn đọc <span class="num-highlight">50 bài</span> tuần trước.<br>
         Bạn nhớ được <span class="num-highlight">3</span>.
       </h1>
-      <h1 class="hero-h1" lang="en">
+      <h1 class="hero-h1 gradient-text" lang="en">
         You read <span class="num-highlight">50 articles</span> last week.<br>
         You remember <span class="num-highlight">3</span>.
       </h1>
@@ -91,7 +91,7 @@ html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !import
         Dùng thử 28 ngày miễn phí · Hoàn tiền 28 ngày · Dữ liệu trên máy bạn · Không phí hàng tháng
       </p>
       <p class="hero-fineprint" lang="en">
-        28-day free trial · 28-day refund · Data on your machine · No subscription
+        15-day free trial · 15-day refund · Data on your machine · No subscription
       </p>
     </div>
 
@@ -509,7 +509,7 @@ html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !import
           <li lang="vi">Mọi cập nhật v1.x miễn phí</li>
           <li lang="en">All v1.x updates free</li>
           <li lang="vi">Hoàn tiền 28 ngày, không cần lý do</li>
-          <li lang="en">28-day refund, no questions</li>
+          <li lang="en">15-day refund, no questions</li>
           <li lang="vi">Cộng đồng Discord + email</li>
           <li lang="en">Discord + email support</li>
         </ul>
@@ -557,7 +557,7 @@ html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !import
       <div class="faq-a" lang="en">
         <p>Fair. Memory Palace is a product of AlphaTech — a small startup in Vietnam. The app has been running six months and our team uses it for our own reading. Invoices and refunds are issued under AlphaTech, Inc.</p>
         <p>Evidence we can offer: source code will go public on GitHub after the official launch. The app sends no telemetry, no analytics, no "phone home". You can verify with any network monitor on your own machine.</p>
-        <p>Still skeptical? Take the 28-day trial first. No problem.</p>
+        <p>Still skeptical? Take the 15-day trial first. No problem.</p>
       </div>
     </details>
 
@@ -659,12 +659,17 @@ html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !import
       <a href="#" class="btn btn-primary btn-lg" id="cta-buy" lang="vi">Mua một lần · $69</a>
       <a href="#" class="btn btn-primary btn-lg" lang="en">Buy once · $69</a>
       <a href="#" class="btn btn-outline btn-lg" id="cta-trial" lang="vi">Dùng thử 28 ngày miễn phí</a>
-      <a href="#" class="btn btn-outline btn-lg" lang="en">Free 28-day trial</a>
+      <a href="#" class="btn btn-outline btn-lg" lang="en">Free 15-day trial</a>
     </div>
-    <p class="buy-note" lang="vi">
-      Hỗ trợ thanh toán quốc tế (Visa, MC, PayPal).<br>
-      Cần chuyển khoản VN (VietQR / bank): email <a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a>.
-    </p>
+    <div class="buy-note" lang="vi" style="text-align: left; background: var(--bg-elevated); padding: 20px; border-radius: 8px; border: 1px solid var(--rule-soft); margin-top: 24px;">
+      <h3 style="margin-top:0; margin-bottom:12px; font-size:16px;">Hướng dẫn mua hàng nội địa:</h3>
+      <p style="margin:0 0 10px 0;">Để thanh toán qua chuyển khoản và nhận License Key, vui lòng liên hệ trực tiếp với Founder qua:</p>
+      <ul style="margin:0 0 16px 20px; padding:0;">
+        <li>Zalo: <strong>0908 695 494</strong></li>
+        <li>Telegram: <strong>0908 695 494</strong></li>
+      </ul>
+      <p style="margin:0; font-size: 14px; color: var(--text-2);">Chúng tôi sẽ hỗ trợ cài đặt, cấu hình AI và cấp mã kích hoạt vĩnh viễn ngay lập tức.</p>
+    </div>
     <p class="buy-note" lang="en">
       International cards (Visa, MC, PayPal) supported.<br>
       Vietnam bank transfer / VietQR: ping <a href="mailto:hello@memorypalace.app">hello@memorypalace.app</a> via email.
@@ -733,6 +738,23 @@ html[lang="vi"] [lang="en"], html[lang="en"] [lang="vi"] { display: none !import
   }
   document.getElementById('lang-toggle').addEventListener('click', () => {
     html.lang = html.lang === 'vi' ? 'en' : 'vi';
+    localStorage.setItem('mp_lang', html.lang);
+    update();
+  });
+  update();
+})();
+</script>
+
+</body>
+</html>
+);
+  update();
+})();
+</script>
+
+</body>
+</html>
+lang === 'vi' ? 'en' : 'vi';
     localStorage.setItem('mp_lang', html.lang);
     update();
   });
